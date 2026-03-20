@@ -8,314 +8,86 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#F5F4F0;--bg2:#EDECE7;--bg3:#E3E1DB;--surface:#FAFAF7;--tx:#1C1C1A;--tx2:#58564F;--tx3:#8E8C85;--tx4:#B8B6B0;--bdr:rgba(0,0,0,.07);--font:'Montserrat',sans-serif}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--font);background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-::selection{background:var(--tx);color:var(--bg)}
-img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
-
-
-[data-a]{opacity:0;transform:translateY(50px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1.2s cubic-bezier(.16,1,.3,1)}
-[data-a="1"]{transition-delay:.1s}[data-a="2"]{transition-delay:.2s}[data-a="3"]{transition-delay:.3s}[data-a="4"]{transition-delay:.4s}
-[data-a].in{opacity:1;transform:none}
-
-nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:1.6rem 4vw;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference}
-nav.solid{mix-blend-mode:normal;background:rgba(245,244,240,.92);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);padding:1rem 4vw;border-bottom:1px solid var(--bdr)}
-.logo{font-weight:800;font-size:.95rem;letter-spacing:.32em;text-transform:uppercase;color:white}
-nav.solid .logo{color:var(--tx)}
-.nav-r{display:flex;align-items:center;gap:2.2rem}
-.nl{font-size:.65rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);transition:color .3s;position:relative}
-nav.solid .nl{color:var(--tx3)}
-.nl:hover{color:white}nav.solid .nl:hover{color:var(--tx)}
-.nl::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:currentColor;transition:width .4s cubic-bezier(.16,1,.3,1)}
-.nl:hover::after{width:100%}
-.nb{font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:.6rem 1.3rem;border:1.5px solid rgba(255,255,255,.35);color:white;background:transparent;cursor:pointer;transition:all .3s}
-nav.solid .nb{border-color:var(--tx);color:var(--tx)}
-.nb:hover{background:white;color:var(--tx)}nav.solid .nb:hover{background:var(--tx);color:var(--bg)}
-.ham{display:none;flex-direction:column;gap:5px;cursor:pointer}
-.ham span{display:block;width:22px;height:1.5px;background:white;transition:all .3s}
-nav.solid .ham span{background:var(--tx)}
-
-.hero{height:100vh;height:100svh;position:relative;overflow:hidden;background:var(--tx)}
-.hero-bg{position:absolute;inset:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.4;transform:scale(1.08);animation:drift 30s ease-in-out infinite alternate}
-@keyframes drift{0%{transform:scale(1.08)}100%{transform:scale(1.14) translate(-1%,-1%)}}
-.hero-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,28,26,.92) 0%,rgba(28,28,26,.15) 45%,rgba(28,28,26,.45) 100%)}
-.hero-c{position:absolute;bottom:8vh;left:4vw;right:4vw;display:flex;justify-content:space-between;align-items:flex-end;gap:3rem}
-.hero-l{max-width:680px}
-.hero-ey{font-size:.58rem;font-weight:600;letter-spacing:.45em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:2rem;display:flex;align-items:center;gap:1rem}
-.hero-ey::before{content:'';width:28px;height:1px;background:rgba(255,255,255,.2)}
-.hero h1{font-weight:800;font-size:clamp(3rem,8vw,7rem);line-height:.88;letter-spacing:-.04em;color:white;margin-bottom:1.5rem}
-.hero h1 .lt{font-weight:300;display:block;color:rgba(255,255,255,.45)}
-.hero-p{font-size:.85rem;font-weight:400;line-height:1.85;color:rgba(255,255,255,.4);max-width:380px;margin-bottom:2.2rem}
-.hero-act{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
-.bw{display:inline-flex;align-items:center;gap:.7rem;padding:.9rem 1.8rem;background:white;color:var(--tx);font-family:var(--font);font-size:.65rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border:none;cursor:pointer;transition:all .4s cubic-bezier(.16,1,.3,1)}
-.bw:hover{transform:translateY(-3px);box-shadow:0 14px 45px rgba(0,0,0,.2)}
-.bw svg{transition:transform .3s}.bw:hover svg{transform:translateX(4px)}
-.bg{font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:.9rem 0;border:none;background:none;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;transition:color .3s;font-family:var(--font)}
-.bg:hover{color:rgba(255,255,255,.8)}
-.hero-rr{text-align:right;flex-shrink:0}
-.hero-rr span{font-size:.6rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.25)}
-.scr{position:absolute;bottom:3vh;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem}
-.scr span{font-size:.52rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.18)}
-.scr .bar{width:1px;height:30px;background:rgba(255,255,255,.12);position:relative;overflow:hidden}
-.scr .bar::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:rgba(255,255,255,.6);animation:scd 2.2s ease-in-out infinite}
-@keyframes scd{0%{top:-100%}50%{top:0}100%{top:100%}}
-
-.mq{padding:2rem 0;border-bottom:1px solid var(--bdr);overflow:hidden;white-space:nowrap}
-.mq-in{display:flex;animation:mqs 40s linear infinite;gap:3.5rem;width:max-content}
-.mq-i{font-size:.6rem;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--tx4);display:flex;align-items:center;gap:3.5rem}
-.mq-i::after{content:'·';font-size:.7rem}
-@keyframes mqs{to{transform:translateX(-50%)}}
-
-.split{display:grid;grid-template-columns:1fr 1fr;min-height:85vh}
-.split-img{overflow:hidden;background:white;display:flex;align-items:center;justify-content:center;padding:3rem}
-.split-img img{max-width:100%;max-height:70vh;object-fit:contain;transition:transform 1.5s cubic-bezier(.16,1,.3,1)}
-.split-img:hover img{transform:scale(1.03)}
-.split-tx{display:flex;flex-direction:column;justify-content:center;padding:5rem 5rem}
-.ey{font-size:.58rem;font-weight:700;letter-spacing:.45em;text-transform:uppercase;color:var(--tx3);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
-.ey::before{content:'';width:20px;height:1px;background:var(--tx4)}
-.split-tx h2{font-weight:800;font-size:clamp(1.6rem,2.8vw,2.5rem);line-height:1.08;color:var(--tx);margin-bottom:1.2rem;letter-spacing:-.02em}
-.split-tx p{font-size:.85rem;font-weight:400;line-height:1.9;color:var(--tx2);margin-bottom:1rem}
-
-.sec{padding:10rem 4vw}.sec-s{padding:7rem 4vw}
-.ch{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem}
-.ch h2{font-weight:800;font-size:clamp(1.8rem,4vw,3.2rem);color:var(--tx);letter-spacing:-.03em}
-.vl{font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--tx3);display:inline-flex;align-items:center;gap:.5rem;transition:color .3s,gap .3s}
-.vl:hover{color:var(--tx);gap:.8rem}
-
-/* product grid - asymmetric 12-col, images CONTAINED not cropped */
-.pg{display:grid;grid-template-columns:repeat(12,1fr);gap:3px}
-.pg .pc:nth-child(1){grid-column:span 7}
-.pg .pc:nth-child(2){grid-column:span 5}
-.pg .pc:nth-child(3){grid-column:span 4}
-.pg .pc:nth-child(4){grid-column:span 4}
-.pg .pc:nth-child(5){grid-column:span 4}
-.pg .pc:nth-child(6){grid-column:span 6}
-.pg .pc:nth-child(7){grid-column:span 6}
-.pc{position:relative;overflow:hidden;cursor:pointer;background:white}
-.pc .pw{aspect-ratio:4/3;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:1.5rem;background:white}
-.pc:nth-child(1) .pw{aspect-ratio:16/10}
-.pc img{max-width:100%;max-height:100%;object-fit:contain;transition:transform 1s cubic-bezier(.16,1,.3,1)}
-.pc:hover img{transform:scale(1.05)}
-.po{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,28,26,.75) 0%,transparent 50%);opacity:0;transition:opacity .5s}
-.pc:hover .po{opacity:1}
-.pi{position:absolute;bottom:0;left:0;right:0;padding:1.6rem 1.8rem;transform:translateY(10px);opacity:0;transition:all .5s cubic-bezier(.16,1,.3,1)}
-.pc:hover .pi{transform:none;opacity:1}
-.pi h3{font-weight:700;font-size:.9rem;color:white;margin-bottom:.25rem;letter-spacing:.02em}
-.pi .pt{font-size:.65rem;font-weight:400;color:rgba(255,255,255,.45);letter-spacing:.04em}
-.pa{position:absolute;top:.8rem;right:.8rem;width:34px;height:34px;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;opacity:0;transform:rotate(-45deg) scale(.8);transition:all .4s cubic-bezier(.16,1,.3,1)}
-.pc:hover .pa{opacity:1;transform:rotate(-45deg) scale(1)}
-
-/* wide feature - contained image on white */
-.wf{display:grid;grid-template-columns:1fr 1fr;min-height:70vh;background:white}
-.wf-img{display:flex;align-items:center;justify-content:center;padding:4rem;background:white}
-.wf-img img{max-width:100%;max-height:60vh;object-fit:contain;transition:transform 8s cubic-bezier(.16,1,.3,1)}
-.wf-img:hover img{transform:scale(1.03)}
-.wf-tx{display:flex;flex-direction:column;justify-content:center;padding:5rem;background:var(--bg)}
-.wf-tx h2{font-weight:800;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--tx);line-height:1.08;margin-bottom:.8rem;letter-spacing:-.02em}
-.wf-tx p{font-size:.85rem;font-weight:400;color:var(--tx2);line-height:1.8;margin-bottom:1.8rem}
-.bd{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.8rem;background:var(--tx);color:var(--bg);font-family:var(--font);font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s}
-.bd:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(0,0,0,.12)}
-.bd svg{transition:transform .3s}.bd:hover svg{transform:translateX(3px)}
-
-/* materials - contained on white */
-.mg{display:grid;grid-template-columns:repeat(4,1fr);gap:3px}
-.mc{position:relative;overflow:hidden;background:white;cursor:pointer;display:flex;align-items:center;justify-content:center;aspect-ratio:1;padding:1.5rem}
-.mc img{max-width:100%;max-height:100%;object-fit:contain;transition:transform .8s cubic-bezier(.16,1,.3,1)}
-.mc:hover img{transform:scale(1.08)}
-.mc-l{position:absolute;inset:0;display:flex;align-items:flex-end;padding:1rem;background:linear-gradient(to top,rgba(28,28,26,.6),transparent 45%);opacity:0;transition:opacity .4s}
-.mc:hover .mc-l{opacity:1}
-.mc-l span{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:white}
-
-/* finishes */
-.fin{background:var(--surface);padding:5rem 4vw;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}
-.fin-h{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.5rem}
-.fin-h h2{font-weight:800;font-size:clamp(1.4rem,2.5vw,2rem);color:var(--tx);letter-spacing:-.01em}
-.fin-h span{font-size:.65rem;color:var(--tx3);font-weight:500}
-.swt{display:flex;gap:2rem;overflow-x:auto;padding:.5rem 0 1.5rem;scroll-snap-type:x mandatory;scrollbar-width:none}
-.swt::-webkit-scrollbar{display:none}
-.sw{flex:0 0 100px;scroll-snap-align:start;text-align:center;cursor:pointer}
-.sw:hover .sw-i{border-color:var(--tx);transform:translateY(-4px)}
-.sw-i{width:88px;height:88px;border-radius:50%;overflow:hidden;margin:0 auto .7rem;border:2px solid transparent;transition:all .5s cubic-bezier(.16,1,.3,1);background:var(--bg2)}
-.sw-i img{width:100%;height:100%;object-fit:cover}
-.sw-i::after{content:'';position:absolute;inset:0;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04)}
-.sw-n{font-size:.6rem;font-weight:600;color:var(--tx);letter-spacing:.03em;line-height:1.3}
-.sw-tt{font-size:.52rem;font-weight:500;color:var(--tx3);margin-top:.1rem;letter-spacing:.06em;text-transform:uppercase}
-
-/* CTA */
-.cta{padding:14rem 4vw;text-align:center}
-.cta h2{font-weight:800;font-size:clamp(2.2rem,5.5vw,4.5rem);color:var(--tx);line-height:.92;margin-bottom:1rem;letter-spacing:-.04em}
-.cta p{font-size:.85rem;color:var(--tx2);margin-bottom:3rem;font-weight:400}
-
-footer{background:var(--tx);color:rgba(255,255,255,.3);padding:4.5rem 4vw 2rem}
-.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:3.5rem}
-.fb{color:rgba(255,255,255,.6)}
-.fb .logo{color:white;font-size:.85rem;margin-bottom:.8rem;display:block}
-.fb p{font-size:.75rem;line-height:1.75;max-width:260px}
-.fc h5{font-weight:700;font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.13);margin-bottom:1rem}
-.fc a{display:block;font-size:.75rem;margin-bottom:.55rem;transition:color .3s}
-.fc a:hover{color:white}
-.fbot{border-top:1px solid rgba(255,255,255,.06);padding-top:1.5rem;display:flex;justify-content:space-between;font-size:.6rem;color:rgba(255,255,255,.13)}
-
-.mm{position:fixed;inset:0;background:var(--bg);z-index:800;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;opacity:0;visibility:hidden;transition:all .5s cubic-bezier(.16,1,.3,1)}
-.mm.open{opacity:1;visibility:visible}
-.mm a{font-size:1.8rem;font-weight:800;color:var(--tx);letter-spacing:.05em;transition:opacity .3s}
-.mm a:hover{opacity:.35}
-.mx{position:absolute;top:1.8rem;right:4vw;font-size:1.6rem;cursor:pointer;color:var(--tx);background:none;border:none}
-
-@media(max-width:1024px){
-  .split{grid-template-columns:1fr;min-height:auto}
-  .split-img{min-height:50vh}
-  .split-tx{padding:4rem 4vw}
-  .pg{grid-template-columns:1fr 1fr}.pg .pc{grid-column:span 1!important}
-  .pc:nth-child(1) .pw{aspect-ratio:4/3}
-  .hero-c{flex-direction:column;align-items:flex-start}
-  .hero-rr{display:none}
-  .mg{grid-template-columns:1fr 1fr}
-  .wf{grid-template-columns:1fr;min-height:auto}
-  .wf-img{min-height:50vh}
-  .ft{grid-template-columns:1fr 1fr}
-  .sec{padding:7rem 4vw}
-}
-@media(max-width:680px){
-  .nav-r .nl,.nav-r .nb{display:none}
-  .ham{display:flex}
-  .hero h1{font-size:clamp(2.4rem,12vw,4.2rem)}
-  .pg{grid-template-columns:1fr}
-  .mg{grid-template-columns:1fr 1fr}
-  .sec{padding:5rem 5vw}.sec-s{padding:4rem 5vw}
-  .ch{flex-direction:column;align-items:flex-start;gap:.8rem}
-  .ft{grid-template-columns:1fr;gap:2rem}
-  .fbot{flex-direction:column;gap:.4rem}
-  .fin-h{flex-direction:column;align-items:flex-start;gap:.4rem}
-  .cta{padding:7rem 5vw}
-  .split-tx{padding:3rem 5vw}
-  .wf-tx{padding:3rem 5vw}
-}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font);background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;overflow-x:hidden}::selection{background:var(--tx);color:var(--bg)}img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+[data-a]{opacity:0;transform:translateY(50px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1.2s cubic-bezier(.16,1,.3,1)}[data-a="1"]{transition-delay:.1s}[data-a="2"]{transition-delay:.2s}[data-a="3"]{transition-delay:.3s}[data-a="4"]{transition-delay:.4s}[data-a].in{opacity:1;transform:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:1.6rem 4vw;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference}nav.solid{mix-blend-mode:normal;background:rgba(245,244,240,.92);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);padding:1rem 4vw;border-bottom:1px solid var(--bdr)}.logo{font-weight:800;font-size:.95rem;letter-spacing:.32em;text-transform:uppercase;color:white}nav.solid .logo{color:var(--tx)}.nav-r{display:flex;align-items:center;gap:2.2rem}.nl{font-size:.65rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);transition:color .3s;position:relative}nav.solid .nl{color:var(--tx3)}.nl:hover{color:white}nav.solid .nl:hover{color:var(--tx)}.nl::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:currentColor;transition:width .4s cubic-bezier(.16,1,.3,1)}.nl:hover::after{width:100%}.nb{font-family:var(--font);font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:.6rem 1.3rem;border:1.5px solid rgba(255,255,255,.35);color:white;background:transparent;cursor:pointer;transition:all .3s}nav.solid .nb{border-color:var(--tx);color:var(--tx)}.nb:hover{background:white;color:var(--tx)}nav.solid .nb:hover{background:var(--tx);color:var(--bg)}.ham{display:none;flex-direction:column;gap:5px;cursor:pointer}.ham span{display:block;width:22px;height:1.5px;background:white;transition:all .3s}nav.solid .ham span{background:var(--tx)}
+.hero{height:100vh;height:100svh;position:relative;overflow:hidden;background:var(--tx)}.hero-bg{position:absolute;inset:0}.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.4;transform:scale(1.08);animation:drift 30s ease-in-out infinite alternate}@keyframes drift{0%{transform:scale(1.08)}100%{transform:scale(1.14) translate(-1%,-1%)}}.hero-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,28,26,.92) 0%,rgba(28,28,26,.15) 45%,rgba(28,28,26,.45) 100%)}.hero-c{position:absolute;bottom:8vh;left:4vw;right:4vw;display:flex;justify-content:space-between;align-items:flex-end;gap:3rem}.hero-l{max-width:680px}.hero-ey{font-size:.58rem;font-weight:600;letter-spacing:.45em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:2rem;display:flex;align-items:center;gap:1rem}.hero-ey::before{content:'';width:28px;height:1px;background:rgba(255,255,255,.2)}.hero h1{font-weight:800;font-size:clamp(3rem,8vw,7rem);line-height:.88;letter-spacing:-.04em;color:white;margin-bottom:1.5rem}.hero h1 .lt{font-weight:300;display:block;color:rgba(255,255,255,.45)}.hero-p{font-size:.85rem;font-weight:400;line-height:1.85;color:rgba(255,255,255,.4);max-width:380px;margin-bottom:2.2rem}.hero-act{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}.bw{display:inline-flex;align-items:center;gap:.7rem;padding:.9rem 1.8rem;background:white;color:var(--tx);font-family:var(--font);font-size:.65rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border:none;cursor:pointer;transition:all .4s cubic-bezier(.16,1,.3,1)}.bw:hover{transform:translateY(-3px);box-shadow:0 14px 45px rgba(0,0,0,.2)}.bw svg{transition:transform .3s}.bw:hover svg{transform:translateX(4px)}.bg{font-family:var(--font);font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:.9rem 0;border:none;background:none;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;transition:color .3s}.bg:hover{color:rgba(255,255,255,.8)}.hero-rr{text-align:right;flex-shrink:0}.hero-rr span{font-size:.6rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.25)}.scr{position:absolute;bottom:3vh;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem}.scr span{font-size:.52rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.18)}.scr .bar{width:1px;height:30px;background:rgba(255,255,255,.12);position:relative;overflow:hidden}.scr .bar::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:rgba(255,255,255,.6);animation:scd 2.2s ease-in-out infinite}@keyframes scd{0%{top:-100%}50%{top:0}100%{top:100%}}
+.mq{padding:2rem 0;border-bottom:1px solid var(--bdr);overflow:hidden;white-space:nowrap}.mq-in{display:flex;animation:mqs 40s linear infinite;gap:3.5rem;width:max-content}.mq-i{font-size:.6rem;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--tx4);display:flex;align-items:center;gap:3.5rem}.mq-i::after{content:'\00B7';font-size:.7rem}@keyframes mqs{to{transform:translateX(-50%)}}
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:85vh}.split-img{overflow:hidden;background:white;display:flex;align-items:center;justify-content:center;padding:3rem}.split-img img{max-width:100%;max-height:70vh;object-fit:contain;transition:transform 1.5s cubic-bezier(.16,1,.3,1)}.split-img:hover img{transform:scale(1.03)}.split-tx{display:flex;flex-direction:column;justify-content:center;padding:5rem}.ey{font-size:.58rem;font-weight:700;letter-spacing:.45em;text-transform:uppercase;color:var(--tx3);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}.ey::before{content:'';width:20px;height:1px;background:var(--tx4)}.split-tx h2{font-weight:800;font-size:clamp(1.6rem,2.8vw,2.5rem);line-height:1.08;color:var(--tx);margin-bottom:1.2rem;letter-spacing:-.02em}.split-tx p{font-size:.85rem;font-weight:400;line-height:1.9;color:var(--tx2);margin-bottom:1rem}
+.sec{padding:10rem 4vw}.sec-s{padding:7rem 4vw}.ch{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem}.ch h2{font-weight:800;font-size:clamp(1.8rem,4vw,3.2rem);color:var(--tx);letter-spacing:-.03em}.vl{font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--tx3);display:inline-flex;align-items:center;gap:.5rem;transition:color .3s,gap .3s}.vl:hover{color:var(--tx);gap:.8rem}
+.pg{display:grid;grid-template-columns:repeat(12,1fr);gap:3px}.pg .pc:nth-child(1){grid-column:span 7}.pg .pc:nth-child(2){grid-column:span 5}.pg .pc:nth-child(3){grid-column:span 4}.pg .pc:nth-child(4){grid-column:span 4}.pg .pc:nth-child(5){grid-column:span 4}.pg .pc:nth-child(6){grid-column:span 6}.pg .pc:nth-child(7){grid-column:span 6}.pc{position:relative;overflow:hidden;cursor:pointer;background:white;display:block}.pc .pw{aspect-ratio:4/3;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:1.5rem;background:white}.pc:nth-child(1) .pw{aspect-ratio:16/10}.pc img{max-width:100%;max-height:100%;object-fit:contain;transition:transform 1s cubic-bezier(.16,1,.3,1)}.pc:hover img{transform:scale(1.05)}.po{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,28,26,.75) 0%,transparent 50%);opacity:0;transition:opacity .5s}.pc:hover .po{opacity:1}.pi{position:absolute;bottom:0;left:0;right:0;padding:1.6rem 1.8rem;transform:translateY(10px);opacity:0;transition:all .5s cubic-bezier(.16,1,.3,1)}.pc:hover .pi{transform:none;opacity:1}.pi h3{font-weight:700;font-size:.9rem;color:white;margin-bottom:.25rem;letter-spacing:.02em}.pi .pt{font-size:.65rem;font-weight:400;color:rgba(255,255,255,.45);letter-spacing:.04em}.pa{position:absolute;top:.8rem;right:.8rem;width:34px;height:34px;background:rgba(255,255,255,.1);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;opacity:0;transform:rotate(-45deg) scale(.8);transition:all .4s cubic-bezier(.16,1,.3,1)}.pc:hover .pa{opacity:1;transform:rotate(-45deg) scale(1)}
+.wf{display:grid;grid-template-columns:1fr 1fr;min-height:70vh;background:white}.wf-img{display:flex;align-items:center;justify-content:center;padding:4rem;background:white}.wf-img img{max-width:100%;max-height:60vh;object-fit:contain;transition:transform 8s cubic-bezier(.16,1,.3,1)}.wf-img:hover img{transform:scale(1.03)}.wf-tx{display:flex;flex-direction:column;justify-content:center;padding:5rem;background:var(--bg)}.wf-tx h2{font-weight:800;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--tx);line-height:1.08;margin-bottom:.8rem;letter-spacing:-.02em}.wf-tx p{font-size:.85rem;font-weight:400;color:var(--tx2);line-height:1.8;margin-bottom:1.8rem}.bd{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.8rem;background:var(--tx);color:var(--bg);font-family:var(--font);font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:none;cursor:pointer;transition:all .3s}.bd:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(0,0,0,.12)}.bd svg{transition:transform .3s}.bd:hover svg{transform:translateX(3px)}
+.mg{display:grid;grid-template-columns:repeat(4,1fr);gap:3px}.mc{position:relative;overflow:hidden;background:white;cursor:pointer;display:flex;align-items:center;justify-content:center;aspect-ratio:1;padding:1.5rem}.mc img{max-width:100%;max-height:100%;object-fit:contain;transition:transform .8s cubic-bezier(.16,1,.3,1)}.mc:hover img{transform:scale(1.08)}.mc-l{position:absolute;inset:0;display:flex;align-items:flex-end;padding:1rem;background:linear-gradient(to top,rgba(28,28,26,.6),transparent 45%);opacity:0;transition:opacity .4s}.mc:hover .mc-l{opacity:1}.mc-l span{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:white}
+.fin{background:var(--surface);padding:5rem 4vw;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)}.fin-h{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.5rem}.fin-h h2{font-weight:800;font-size:clamp(1.4rem,2.5vw,2rem);color:var(--tx);letter-spacing:-.01em}.swt{display:flex;gap:2rem;overflow-x:auto;padding:.5rem 0 1.5rem;scroll-snap-type:x mandatory;scrollbar-width:none}.swt::-webkit-scrollbar{display:none}.sw{flex:0 0 100px;scroll-snap-align:start;text-align:center;cursor:pointer}.sw:hover .sw-i{border-color:var(--tx);transform:translateY(-4px)}.sw-i{width:88px;height:88px;border-radius:50%;overflow:hidden;margin:0 auto .7rem;border:2px solid transparent;transition:all .5s cubic-bezier(.16,1,.3,1);background:var(--bg2)}.sw-i img{width:100%;height:100%;object-fit:cover}.sw-n{font-size:.6rem;font-weight:600;color:var(--tx);letter-spacing:.03em;line-height:1.3}.sw-tt{font-size:.52rem;font-weight:500;color:var(--tx3);margin-top:.1rem;letter-spacing:.06em;text-transform:uppercase}
+.cta{padding:14rem 4vw;text-align:center}.cta h2{font-weight:800;font-size:clamp(2.2rem,5.5vw,4.5rem);color:var(--tx);line-height:.92;margin-bottom:1rem;letter-spacing:-.04em}.cta p{font-size:.85rem;color:var(--tx2);margin-bottom:3rem;font-weight:400}
+footer{background:var(--tx);color:rgba(255,255,255,.3);padding:4.5rem 4vw 2rem}.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:3.5rem}.fb{color:rgba(255,255,255,.6)}.fb .logo{color:white;font-size:.85rem;margin-bottom:.8rem;display:block}.fb p{font-size:.75rem;line-height:1.75;max-width:260px}.social{display:flex;gap:1.2rem;margin-top:1.2rem}.social a{color:rgba(255,255,255,.35);transition:color .3s}.social a:hover{color:white}.fc h5{font-weight:700;font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.13);margin-bottom:1rem}.fc a{display:block;font-size:.75rem;margin-bottom:.55rem;transition:color .3s}.fc a:hover{color:white}.fbot{border-top:1px solid rgba(255,255,255,.06);padding-top:1.5rem;display:flex;justify-content:space-between;font-size:.6rem;color:rgba(255,255,255,.13)}
+.mm{position:fixed;inset:0;background:var(--bg);z-index:800;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;opacity:0;visibility:hidden;transition:all .5s cubic-bezier(.16,1,.3,1)}.mm.open{opacity:1;visibility:visible}.mm a{font-size:1.8rem;font-weight:800;color:var(--tx);letter-spacing:.05em;transition:opacity .3s}.mm a:hover{opacity:.35}.mx{position:absolute;top:1.8rem;right:4vw;font-size:1.6rem;cursor:pointer;color:var(--tx);background:none;border:none}
+@media(max-width:1024px){.split{grid-template-columns:1fr;min-height:auto}.split-img{min-height:50vh}.split-tx{padding:4rem 4vw}.pg{grid-template-columns:1fr 1fr}.pg .pc{grid-column:span 1 !important}.pc:nth-child(1) .pw{aspect-ratio:4/3}.hero-c{flex-direction:column;align-items:flex-start}.hero-rr{display:none}.mg{grid-template-columns:1fr 1fr}.wf{grid-template-columns:1fr;min-height:auto}.wf-img{min-height:50vh}.ft{grid-template-columns:1fr 1fr}.sec{padding:7rem 4vw}}
+@media(max-width:680px){.nav-r .nl,.nav-r .nb{display:none}.ham{display:flex}.hero h1{font-size:clamp(2.4rem,12vw,4.2rem)}.pg{grid-template-columns:1fr}.mg{grid-template-columns:1fr 1fr}.sec{padding:5rem 5vw}.sec-s{padding:4rem 5vw}.ch{flex-direction:column;align-items:flex-start;gap:.8rem}.ft{grid-template-columns:1fr;gap:2rem}.fbot{flex-direction:column;gap:.4rem}.fin-h{flex-direction:column;align-items:flex-start;gap:.4rem}.cta{padding:7rem 5vw}.split-tx{padding:3rem 5vw}.wf-tx{padding:3rem 5vw}}
 </style>
 </head>
 <body>
 
-<div class="mm" id="mm"><button class="mx" onclick="document.getElementById('mm').classList.remove('open')">&times;</button><a href="#col" onclick="document.getElementById('mm').classList.remove('open')">Collection</a><a href="#fin" onclick="document.getElementById('mm').classList.remove('open')">Finishes</a><a href="#about" onclick="document.getElementById('mm').classList.remove('open')">Atelier</a><a href="#cta" onclick="document.getElementById('mm').classList.remove('open')">Quote</a></div>
+<div class="mm" id="mm"><button class="mx" onclick="document.getElementById('mm').classList.remove('open')">&times;</button><a href="#col" onclick="document.getElementById('mm').classList.remove('open')">Collection</a><a href="finishes.html" onclick="document.getElementById('mm').classList.remove('open')">Finishes</a><a href="#about" onclick="document.getElementById('mm').classList.remove('open')">Atelier</a><a href="contact.html" onclick="document.getElementById('mm').classList.remove('open')">Contact</a></div>
 
-<nav id="nav">
-  <a href="#" class="logo">Facet</a>
-  <div class="nav-r">
-    <a href="#col" class="nl">Collection</a>
-    <a href="#fin" class="nl">Finishes</a>
-    <a href="#about" class="nl">Atelier</a>
-    <button class="nb" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Request Quote</button>
-    <div class="ham" onclick="document.getElementById('mm').classList.add('open')"><span></span><span></span><span></span></div>
-  </div>
-</nav>
+<nav id="nav"><a href="index.html" class="logo">Facet</a><div class="nav-r"><a href="#col" class="nl">Collection</a><a href="finishes.html" class="nl">Finishes</a><a href="#about" class="nl">Atelier</a><button class="nb" onclick="location.href='contact.html'">Request Quote</button><div class="ham" onclick="document.getElementById('mm').classList.add('open')"><span></span><span></span><span></span></div></div></nav>
 
-<section class="hero">
-  <div class="hero-bg"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/14_radiate_table/white_oak_top.jpg" alt="Radiate Table from above"></div>
-  <div class="hero-ov"></div>
-  <div class="hero-c">
-    <div class="hero-l">
-      <div class="hero-ey" data-a>Birmingham, AL — Est. 2018</div>
-      <h1 data-a="1">Made to<br><span class="lt">be yours</span></h1>
-      <p class="hero-p" data-a="2">Hand-built, made-to-order furniture. Choose every detail — wood, finish, dimensions. We craft exactly what you envision.</p>
-      <div class="hero-act" data-a="3">
-        <a href="#col" class="bw">Explore <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <button class="bg" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Our process <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></button>
-      </div>
-    </div>
-    <div class="hero-rr" data-a="4"><span>Radiate Table — White Oak</span></div>
-  </div>
-  <div class="scr"><span>Scroll</span><div class="bar"></div></div>
-</section>
+<section class="hero"><div class="hero-bg"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/14_radiate_table/white_oak_top.jpg" alt="Radiate Table"></div><div class="hero-ov"></div><div class="hero-c"><div class="hero-l"><div class="hero-ey" data-a>Birmingham, AL — Est. 2018</div><h1 data-a="1">Made to<br><span class="lt">be yours</span></h1><p class="hero-p" data-a="2">Hand-built, made-to-order furniture. Choose every detail — wood, finish, dimensions. We craft exactly what you envision.</p><div class="hero-act" data-a="3"><a href="#col" class="bw">Explore <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><button class="bg" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Our process <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></button></div></div><div class="hero-rr" data-a="4"><span>Radiate Table — White Oak</span></div></div><div class="scr"><span>Scroll</span><div class="bar"></div></div></section>
 
 <div class="mq"><div class="mq-in"><span class="mq-i">Walnut</span><span class="mq-i">White Oak</span><span class="mq-i">Reclaimed Oak</span><span class="mq-i">Nero Marble</span><span class="mq-i">Forged Brass</span><span class="mq-i">Shagreen</span><span class="mq-i">Bronze</span><span class="mq-i">San Simone Quartzite</span><span class="mq-i">Parchment</span><span class="mq-i">Walnut</span><span class="mq-i">White Oak</span><span class="mq-i">Reclaimed Oak</span><span class="mq-i">Nero Marble</span><span class="mq-i">Forged Brass</span><span class="mq-i">Shagreen</span><span class="mq-i">Bronze</span><span class="mq-i">San Simone Quartzite</span><span class="mq-i">Parchment</span></div></div>
 
-<section class="split" id="about">
-  <div class="split-img" data-a><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/06_radiate_bar/front_view.jpg" alt="Radiate Bar"></div>
-  <div class="split-tx">
-    <div class="ey" data-a>The Atelier</div>
-    <h2 data-a="1">Every piece begins with a conversation</h2>
-    <p data-a="2">Inspired by Italian design and built in Birmingham by Michael Morrow and the team at MDM Design Studio. We don't make furniture for showrooms — we make it for the spaces where life happens.</p>
-    <p data-a="3">Each piece is handcrafted from start to finish. Every joint, every finish, every surface is an opportunity for excellence.</p>
-  </div>
-</section>
+<section class="split" id="about"><div class="split-img" data-a><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/06_radiate_bar/front_view.jpg" alt="Radiate Bar"></div><div class="split-tx"><div class="ey" data-a>The Atelier</div><h2 data-a="1">Every piece begins with a conversation</h2><p data-a="2">Inspired by Italian design and built in Birmingham by Michael Morrow and the team at MDM Design Studio. We don't make furniture for showrooms — we make it for the spaces where life happens.</p><p data-a="3">Each piece is handcrafted from start to finish. Every joint, every finish, every surface is an opportunity for excellence.</p></div></section>
 
-<section class="sec-s" id="col">
-  <div class="ch"><h2 data-a>Collection</h2><a href="#" class="vl" data-a="1">All pieces <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
-  <div class="pg">
-    <div class="pc" data-a onclick="location.href='products/radiate-table.html'" style="cursor:pointer"><div class="pw"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/14_radiate_table/white_oak_front.jpg" alt="Radiate Table" loading="lazy"></div><div class="po"></div><div class="pi"><h3>Radiate Table</h3><div class="pt">Walnut · White Oak · Round · Ellipse</div></div><div class="pa"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
-    <div class="pc" data-a="1"><div class="pw"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/02_prodigieux_credenza/front_top.jpg" alt="Prodigieux Credenza" loading="lazy"></div><div class="po"></div><div class="pi"><h3>Prodigieux Credenza</h3><div class="pt">Marble · Bronze · Walnut · White Oak</div></div><div class="pa"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
-    <div class="pc" data-a><div class="pw"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/03_phylo_hutch/front_view.jpg" alt="Phylo Hutch" loading="lazy"></div><div class="po"></div><div class="pi"><h3>Phylo Hutch</h3><div class="pt">Shagreen · Bronze · Mirror</div></div><div class="pa"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
-    <div class="pc" data-a="1"><div class="pw"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/07_mariana_curio/front_view.jpg" alt="Mariana Curio" loading="lazy"></div><div class="po"></div><div class="pi"><h3>Mariana Curio</h3><div class="pt">Glass · Brass · Iron · Display</div></div><div class="pa"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
-    <div class="pc" data-a="2"><div class="pw"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/16_frankie_bed/frontside.jpg" alt="Frankie Bed" loading="lazy"></div><div class="po"></div><div class="pi"><h3>Frankie Bed</h3><div class="pt">Brass Rails · Walnut · White Oak</div></div><div class="pa"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
-    <div class="pc" data-a><div class="pw"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/05_leverage_dining_table/frontside_top.jpg" alt="Leverage Dining Table" loading="lazy"></div><div class="po"></div><div class="pi"><h3>Leverage Dining Table</h3><div class="pt">Concrete · Brass · Walnut · White Oak</div></div><div class="pa"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
-    <div class="pc" data-a="1"><div class="pw"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/04_motley_coffee_table/frontside_top.jpg" alt="Motley Coffee Table" loading="lazy"></div><div class="po"></div><div class="pi"><h3>Motley Coffee Table</h3><div class="pt">Marble · Parchment · White Oak</div></div><div class="pa"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
-  </div>
-</section>
+<section class="sec-s" id="col"><div class="ch"><h2 data-a>Collection</h2><a href="#" class="vl" data-a="1">All pieces <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+<div class="pg">
+<a href="products/radiate-table.html" class="pc" data-a><div class="pw"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/14_radiate_table/white_oak_front.jpg" alt="Radiate Table" loading="lazy"></div><div class="po"></div><div class="pi"><h3>Radiate Table</h3><div class="pt">Walnut · White Oak · Round · Ellipse</div></div><div class="pa"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></a>
+<a href="products/prodigieux-credenza.html" class="pc" data-a="1"><div class="pw"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/02_prodigieux_credenza/front_top.jpg" alt="Prodigieux Credenza" loading="lazy"></div><div class="po"></div><div class="pi"><h3>Prodigieux Credenza</h3><div class="pt">Marble · Bronze · Walnut · White Oak</div></div><div class="pa"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></a>
+<a href="products/phylo-hutch.html" class="pc" data-a><div class="pw"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/03_phylo_hutch/front_view.jpg" alt="Phylo Hutch" loading="lazy"></div><div class="po"></div><div class="pi"><h3>Phylo Hutch</h3><div class="pt">Shagreen · Bronze · Mirror</div></div><div class="pa"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></a>
+<a href="products/mariana-curio.html" class="pc" data-a="1"><div class="pw"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/07_mariana_curio/front_view.jpg" alt="Mariana Curio" loading="lazy"></div><div class="po"></div><div class="pi"><h3>Mariana Curio</h3><div class="pt">Glass · Brass · Iron · Display</div></div><div class="pa"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></a>
+<a href="products/frankie-bed.html" class="pc" data-a="2"><div class="pw"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/16_frankie_bed/frontside.jpg" alt="Frankie Bed" loading="lazy"></div><div class="po"></div><div class="pi"><h3>Frankie Bed</h3><div class="pt">Brass Rails · Walnut · White Oak</div></div><div class="pa"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></a>
+<a href="products/leverage-dining-table.html" class="pc" data-a><div class="pw"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/05_leverage_dining_table/frontside_top.jpg" alt="Leverage Dining Table" loading="lazy"></div><div class="po"></div><div class="pi"><h3>Leverage Dining Table</h3><div class="pt">Concrete · Brass · Walnut · White Oak</div></div><div class="pa"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></a>
+<a href="products/motley-coffee-table.html" class="pc" data-a="1"><div class="pw"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/04_motley_coffee_table/frontside_top.jpg" alt="Motley Coffee Table" loading="lazy"></div><div class="po"></div><div class="pi"><h3>Motley Coffee Table</h3><div class="pt">Marble · Parchment · White Oak</div></div><div class="pa"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></a>
+</div></section>
 
-<section class="wf">
-  <div class="wf-img" data-a><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/14_radiate_table/walnut_front.jpg" alt="Radiate Table walnut" loading="lazy"></div>
-  <div class="wf-tx">
-    <div class="ey" data-a>Signature</div>
-    <h2 data-a="1">The Radiate Table</h2>
-    <p data-a="2">A captivating sunburst pattern. Round or ellipse. Six sizes. Walnut or White Oak. Handcrafted by artisans who treat wood grain as a medium.</p>
-    <button class="bd" data-a="3" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Configure yours <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-  </div>
-</section>
+<section class="wf"><div class="wf-img" data-a><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/14_radiate_table/walnut_front.jpg" alt="Radiate Table walnut" loading="lazy"></div><div class="wf-tx"><div class="ey" data-a>Signature</div><h2 data-a="1">The Radiate Table</h2><p data-a="2">A captivating sunburst pattern. Round or ellipse. Six sizes. Walnut or White Oak. Handcrafted by artisans who treat wood grain as a medium.</p><a href="radiate-gallery.html" class="bd" data-a="3">Explore the Radiate Table <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div></section>
 
-<section class="sec-s">
-  <div class="ch"><h2 data-a>Materials</h2><span class="vl" data-a="1" style="cursor:default">Wood · Stone · Metal · Textile</span></div>
-  <div class="mg" data-a>
-    <div class="mc"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/14_radiate_table/white_oak_details.jpg" alt="White Oak" loading="lazy"><div class="mc-l"><span>White Oak</span></div></div>
-    <div class="mc"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/06_radiate_bar/grain_details.jpg" alt="Walnut" loading="lazy"><div class="mc-l"><span>Walnut</span></div></div>
-    <div class="mc"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/02_prodigieux_credenza/topside_details.jpg" alt="Marble" loading="lazy"><div class="mc-l"><span>Marble</span></div></div>
-    <div class="mc"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/06_radiate_bar/handle_details.jpg" alt="Forged Brass" loading="lazy"><div class="mc-l"><span>Forged Brass</span></div></div>
-  </div>
-</section>
+<section class="sec-s"><div class="ch"><h2 data-a>Materials</h2><span class="vl" data-a="1" style="cursor:default">Wood · Stone · Metal · Textile</span></div><div class="mg" data-a><div class="mc"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/14_radiate_table/white_oak_details.jpg" alt="White Oak" loading="lazy"><div class="mc-l"><span>White Oak</span></div></div><div class="mc"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/06_radiate_bar/grain_details.jpg" alt="Walnut" loading="lazy"><div class="mc-l"><span>Walnut</span></div></div><div class="mc"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/02_prodigieux_credenza/topside_details.jpg" alt="Marble" loading="lazy"><div class="mc-l"><span>Marble</span></div></div><div class="mc"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/06_radiate_bar/handle_details.jpg" alt="Forged Brass" loading="lazy"><div class="mc-l"><span>Forged Brass</span></div></div></div></section>
 
-<section class="fin" id="fin">
-  <div class="fin-h"><h2 data-a>Finishes</h2><span data-a="1">21 hand-applied across three wood types</span></div>
-  <div class="swt" data-a="2">
-    <div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/natural_walnut.jpg" alt="Natural Walnut"></div><div class="sw-n">Natural</div><div class="sw-tt">Walnut</div></div>
-    <div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/pure_living.jpg" alt="Pure Living"></div><div class="sw-n">Pure Living</div><div class="sw-tt">Walnut</div></div>
-    <div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/shade_pure_living.jpg" alt="Shade Pure"></div><div class="sw-n">Shade Pure</div><div class="sw-tt">Walnut</div></div>
-    <div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/shadow.jpg" alt="Shadow"></div><div class="sw-n">Shadow</div><div class="sw-tt">Walnut</div></div>
-    <div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/silver_lining_living.jpg" alt="Silver Lining"></div><div class="sw-n">Silver Lining</div><div class="sw-tt">Walnut</div></div>
-    <div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/gray_ash.jpg" alt="Gray Ash"></div><div class="sw-n">Gray Ash</div><div class="sw-tt">Walnut</div></div>
-    <div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/natural_white_oak.jpg" alt="Natural"></div><div class="sw-n">Natural</div><div class="sw-tt">White Oak</div></div>
-    <div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/ghost_white_grey_cerused.jpg" alt="Ghost Cerused"></div><div class="sw-n">Ghost Cerused</div><div class="sw-tt">White Oak</div></div>
-    <div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/jet_grey_cerused.jpg" alt="Jet Cerused"></div><div class="sw-n">Jet Cerused</div><div class="sw-tt">White Oak</div></div>
-    <div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/overcast_white_cerused.jpg" alt="Overcast"></div><div class="sw-n">Overcast</div><div class="sw-tt">White Oak</div></div>
-    <div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/smoke_pure_living.jpg" alt="Smoke Pure"></div><div class="sw-n">Smoke Pure</div><div class="sw-tt">White Oak</div></div>
-    <div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_reclaimed_oak/silver_lining_living.jpg" alt="Silver Lining"></div><div class="sw-n">Silver Lining</div><div class="sw-tt">Reclaimed</div></div>
-  </div>
-</section>
+<section class="fin" id="fin"><div class="fin-h"><h2 data-a>Finishes</h2><a href="finishes.html" class="vl" data-a="1">All 21 finishes <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+<div class="swt" data-a="2">
+<div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/natural_walnut.jpg" alt="Natural Walnut"></div><div class="sw-n">Natural</div><div class="sw-tt">Walnut</div></div>
+<div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/pure_living.jpg" alt="Pure Living"></div><div class="sw-n">Pure Living</div><div class="sw-tt">Walnut</div></div>
+<div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/shade_pure_living.jpg" alt="Shade Pure"></div><div class="sw-n">Shade Pure</div><div class="sw-tt">Walnut</div></div>
+<div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/shadow.jpg" alt="Shadow"></div><div class="sw-n">Shadow</div><div class="sw-tt">Walnut</div></div>
+<div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/silver_lining_living.jpg" alt="Silver Lining"></div><div class="sw-n">Silver Lining</div><div class="sw-tt">Walnut</div></div>
+<div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/gray_ash.jpg" alt="Gray Ash"></div><div class="sw-n">Gray Ash</div><div class="sw-tt">Walnut</div></div>
+<div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/natural_white_oak.jpg" alt="Natural"></div><div class="sw-n">Natural</div><div class="sw-tt">White Oak</div></div>
+<div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/ghost_white_grey_cerused.jpg" alt="Ghost Cerused"></div><div class="sw-n">Ghost Cerused</div><div class="sw-tt">White Oak</div></div>
+<div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/jet_grey_cerused.jpg" alt="Jet Cerused"></div><div class="sw-n">Jet Cerused</div><div class="sw-tt">White Oak</div></div>
+<div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/overcast_white_cerused.jpg" alt="Overcast"></div><div class="sw-n">Overcast</div><div class="sw-tt">White Oak</div></div>
+<div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/smoke_pure_living.jpg" alt="Smoke Pure"></div><div class="sw-n">Smoke Pure</div><div class="sw-tt">White Oak</div></div>
+<div class="sw"><div class="sw-i"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_reclaimed_oak/silver_lining_living.jpg" alt="Silver Lining"></div><div class="sw-n">Silver Lining</div><div class="sw-tt">Reclaimed</div></div>
+</div></section>
 
-<section class="cta" id="cta">
-  <h2 data-a>Begin with a<br>conversation</h2>
-  <p data-a="1">Tell us about your space. We'll guide you to the perfect piece.</p>
-  <a href="/cdn-cgi/l/email-protection#3d54535b527d5b5c5e58495b484f535449484f58135e5250" class="bd" data-a="2">Request a quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-</section>
+<section class="cta" id="cta"><h2 data-a>Begin with a<br>conversation</h2><p data-a="1">Tell us about your space. We'll guide you to the perfect piece.</p><a href="contact.html" class="bd" data-a="2">Request a quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></section>
 
-<footer>
-  <div class="ft">
-    <div class="fb"><span class="logo">Facet</span><p>Contemporary furniture with an artisan's touch. Designed and handcrafted in Birmingham, Alabama by MDM Design Studio.</p>
-      <div style="display:flex;gap:1.5rem;margin-top:1.2rem">
-        <a href="https://www.facebook.com/facetfurniture/" target="_blank" style="color:rgba(255,255,255,.3);transition:color .3s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.3)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-        <a href="https://www.instagram.com/mdmdesignstudio/" target="_blank" style="color:rgba(255,255,255,.3);transition:color .3s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.3)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
-        <a href="https://www.pinterest.com/mdmdesignstudio/facet-furniture/" target="_blank" style="color:rgba(255,255,255,.3);transition:color .3s" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.3)'"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.15 9.42 7.6 11.18-.1-.94-.2-2.38.04-3.41.22-.93 1.4-5.93 1.4-5.93s-.36-.72-.36-1.78c0-1.66.97-2.91 2.17-2.91 1.02 0 1.52.77 1.52 1.69 0 1.03-.66 2.57-1 3.99-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.25 3.78-5.5 0-2.88-2.07-4.89-5.02-4.89-3.42 0-5.43 2.57-5.43 5.22 0 1.03.4 2.14.89 2.74.1.12.11.22.08.34-.09.38-.3 1.2-.34 1.36-.05.22-.18.26-.42.16-1.56-.73-2.53-3.01-2.53-4.84 0-3.94 2.86-7.56 8.26-7.56 4.33 0 7.71 3.09 7.71 7.21 0 4.31-2.72 7.78-6.49 7.78-1.27 0-2.46-.66-2.87-1.44l-.78 2.98c-.28 1.09-1.04 2.45-1.55 3.28C9.58 23.81 10.77 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg></a>
-      </div>
-    </div>
-    <div class="fc"><h5>Collection</h5><a href="#col">Tables</a><a href="#col">Storage</a><a href="#col">Seating</a><a href="#col">Bedroom</a><a href="#col">Mirrors</a></div>
-    <div class="fc"><h5>Resources</h5><a href="#fin">Finishes</a><a href="finishes.html">All Finishes</a><a href="blog.html">Journal</a><a href="faq.html">FAQ</a></div>
-    <div class="fc"><h5>Contact</h5><a href="/cdn-cgi/l/email-protection#2d44434b426d4b4c4e48594b585f434459585f48034e4240"><span class="__cf_email__" data-cfemail="7f161119103f191e1c1a0b190a0d11160b0a0d1a511c1012">[email&#160;protected]</span></a><a href="#">4306 Powell Ave S<br>Birmingham, AL 35222</a></div>
-  </div>
-  <div class="fbot"><span>&copy; 2026 Facet · MDM Design Studio</span><span>Mon–Fri, 8am–5pm CST</span></div>
-</footer>
+<footer><div class="ft"><div class="fb"><span class="logo">Facet</span><p>Contemporary furniture with an artisan's touch. Designed and handcrafted in Birmingham, Alabama by MDM Design Studio.</p><div class="social"><a href="https://www.facebook.com/facetfurniture/" target="_blank" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a><a href="https://www.instagram.com/mdmdesignstudio/" target="_blank" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a><a href="https://www.pinterest.com/mdmdesignstudio/facet-furniture/" target="_blank" aria-label="Pinterest"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.15 9.42 7.6 11.18-.1-.94-.2-2.38.04-3.41.22-.93 1.4-5.93 1.4-5.93s-.36-.72-.36-1.78c0-1.66.97-2.91 2.17-2.91 1.02 0 1.52.77 1.52 1.69 0 1.03-.66 2.57-1 3.99-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.25 3.78-5.5 0-2.88-2.07-4.89-5.02-4.89-3.42 0-5.43 2.57-5.43 5.22 0 1.03.4 2.14.89 2.74.1.12.11.22.08.34-.09.38-.3 1.2-.34 1.36-.05.22-.18.26-.42.16-1.56-.73-2.53-3.01-2.53-4.84 0-3.94 2.86-7.56 8.26-7.56 4.33 0 7.71 3.09 7.71 7.21 0 4.31-2.72 7.78-6.49 7.78-1.27 0-2.46-.66-2.87-1.44l-.78 2.98c-.28 1.09-1.04 2.45-1.55 3.28C9.58 23.81 10.77 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg></a></div></div><div class="fc"><h5>Collection</h5><a href="products/radiate-table.html">Tables</a><a href="products/prodigieux-credenza.html">Storage</a><a href="products/pure-chair.html">Seating</a><a href="products/frankie-bed.html">Bedroom</a><a href="products/dove-mirror.html">Mirrors</a></div><div class="fc"><h5>Resources</h5><a href="finishes.html">Finishes</a><a href="faq.html">FAQ</a><a href="blog.html">Journal</a><a href="contact.html">Contact</a></div><div class="fc"><h5>Contact</h5><a href="mailto:info@facetfurniture.com">info@facetfurniture.com</a><a href="#">4306 Powell Ave S<br>Birmingham, AL 35222</a></div></div><div class="fbot"><span>&copy; 2026 Facet &middot; MDM Design Studio</span><span>Mon&ndash;Fri, 8am&ndash;5pm CST</span></div></footer>
 
 <script>
-const n=document.getElementById('nav');
-window.addEventListener('scroll',()=>n.classList.toggle('solid',scrollY>80),{passive:true});
-const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:.05,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('[data-a]').forEach(el=>o.observe(el));
-const cardLinks={'Radiate Table':'products/radiate-table.html','Prodigieux Credenza':'products/prodigieux-credenza.html','Phylo Hutch':'products/phylo-hutch.html','Mariana Curio':'products/mariana-curio.html','Frankie Bed':'products/frankie-bed.html','Leverage Dining Table':'products/leverage-dining-table.html','Motley Coffee Table':'products/motley-cof
+var n = document.getElementById('nav');
+window.addEventListener('scroll', function() {
+  n.classList.toggle('solid', window.scrollY > 80);
+}, {passive: true});
+
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) e.target.classList.add('in');
+  });
+}, {threshold: 0.05, rootMargin: '0px 0px -30px 0px'});
+
+document.querySelectorAll('[data-a]').forEach(function(el) {
+  obs.observe(el);
+});
+</script>
+</body>
+</html>

@@ -3,121 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Finishes — Facet Furniture</title>
-<link rel="stylesheet" href="style.css">
-<style>
-.page-hero{padding:10rem 4vw 3rem;max-width:700px}
-.page-hero h1{font-weight:800;font-size:clamp(2.2rem,5vw,3.5rem);line-height:.95;color:var(--tx);letter-spacing:-.03em;margin-bottom:1rem}
-.page-hero p{font-size:.88rem;font-weight:400;color:var(--tx2);line-height:1.8}
+<title>Finishes - Facet Furniture</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap');
+:root{--bg:#F5F4F0;--bg2:#EDECE7;--surface:#FAFAF7;--tx:#1C1C1A;--tx2:#58564F;--tx3:#8E8C85;--tx4:#B8B6B0;--bdr:rgba(0,0,0,.07);--font:'Montserrat',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font);background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;overflow-x:hidden}::selection{background:var(--tx);color:var(--bg)}img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+.r{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}.r.v{opacity:1;transform:none}.r1{transition-delay:.1s}.r2{transition-delay:.2s}.r3{transition-delay:.3s}
 
-.fin-section{padding:0 4vw 5rem}
-.fin-section h2{font-weight:800;font-size:1.4rem;color:var(--tx);margin-bottom:.5rem;letter-spacing:-.01em}
-.fin-section>p{font-size:.78rem;color:var(--tx3);margin-bottom:2rem;line-height:1.7}
-.swatch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1.5rem;margin-bottom:4rem}
-.sg-card{text-align:center;cursor:default}
-.sg-img{width:140px;height:140px;border-radius:50%;overflow:hidden;margin:0 auto .8rem;border:2px solid transparent;transition:all .5s cubic-bezier(.16,1,.3,1);background:var(--bg2);position:relative}
-.sg-card:hover .sg-img{border-color:var(--tx);transform:translateY(-4px)}
-.sg-img img{width:100%;height:100%;object-fit:cover}
-.sg-img::after{content:'';position:absolute;inset:0;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.05)}
-.sg-name{font-size:.7rem;font-weight:600;color:var(--tx);letter-spacing:.02em;line-height:1.3}
-.sg-desc{font-size:.6rem;font-weight:400;color:var(--tx3);margin-top:.15rem}
-
-.paint-section{padding:0 4vw 5rem}
-.paint-section h2{font-weight:800;font-size:1.4rem;color:var(--tx);margin-bottom:.5rem}
-.paint-section>p{font-size:.78rem;color:var(--tx3);margin-bottom:2rem}
-.paint-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem}
-.paint-card{background:white;padding:1.2rem;border:1px solid var(--bdr)}
-.paint-card h4{font-size:.72rem;font-weight:700;color:var(--tx);margin-bottom:.2rem}
-.paint-card span{font-size:.62rem;color:var(--tx3)}
-
-.note{background:var(--surface);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:4rem 4vw;margin-bottom:4rem;max-width:700px}
-.note h3{font-weight:700;font-size:.9rem;color:var(--tx);margin-bottom:.6rem}
-.note p{font-size:.82rem;color:var(--tx2);line-height:1.8}
-
-.cta-band{padding:8rem 4vw;text-align:center}
-.cta-band h2{font-weight:800;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--tx);margin-bottom:.8rem;letter-spacing:-.02em}
-.cta-band p{font-size:.85rem;color:var(--tx2);margin-bottom:2rem}
-
-@media(max-width:680px){.page-hero{padding:8rem 5vw 2rem}.fin-section,.paint-section{padding:0 5vw 4rem}.note{padding:3rem 5vw}.cta-band{padding:5rem 5vw}}
+@media(max-width:900px){.navlinks a:not(:last-child){display:none}}
 </style>
 </head>
 <body>
-<div class="mm" id="mm"><button class="mx" onclick="document.getElementById('mm').classList.remove('open')">&times;</button><a href="index.html#col" onclick="document.getElementById('mm').classList.remove('open')">Collection</a><a href="finishes.html" onclick="document.getElementById('mm').classList.remove('open')">Finishes</a><a href="index.html#about" onclick="document.getElementById('mm').classList.remove('open')">Atelier</a><a href="contact.html" onclick="document.getElementById('mm').classList.remove('open')">Contact</a></div>
-<nav><a href="index.html" class="logo">Facet</a><div class="nav-r"><a href="index.html#col" class="nl">Collection</a><a href="finishes.html" class="nl">Finishes</a><a href="index.html#about" class="nl">Atelier</a><button class="nb" onclick="location.href='contact.html'">Request Quote</button><div class="ham" onclick="document.getElementById('mm').classList.add('open')"><span></span><span></span><span></span></div></div></nav>
+<nav id="nav" style="position:fixed;top:0;left:0;right:0;z-index:900;padding:1.4rem 4vw;display:flex;justify-content:space-between;align-items:center;background:rgba(245,244,240,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr)">
+  <a href="index.html" style="font-weight:800;font-size:.95rem;letter-spacing:.32em;text-transform:uppercase;color:var(--tx)">Facet</a>
+  <div style="display:flex;align-items:center;gap:2rem" class="navlinks">
+    <a href="index.html#col" style="font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3)">Collection</a>
+    <a href="finishes.html" style="font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3)">Finishes</a>
+    <a href="faq.html" style="font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3)">FAQ</a>
+    <a href="contact.html" style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx);padding:.55rem 1.2rem;border:1.5px solid var(--tx)">Request Quote</a>
+  </div>
+</nav>
+<div style="padding-top:5rem">
 
-<section class="page-hero">
-  <div class="ey" data-a>21 Finishes</div>
-  <h1 data-a="1">Finishes</h1>
-  <p data-a="2">Every finish is hand-applied by our artisans. Explore our curated palette across three wood types. Samples and sample chains are available — contact us at info@facetfurniture.com.</p>
+<section style="padding:4rem 4vw;max-width:700px">
+  <div style="font-size:.55rem;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--tx3);margin-bottom:1.2rem" class="r">21 Finishes</div>
+  <h1 style="font-weight:800;font-size:clamp(2rem,4vw,3rem);color:var(--tx);margin-bottom:1rem;letter-spacing:-.02em" class="r r1">Finishes</h1>
+  <p style="font-size:.85rem;color:var(--tx2);line-height:1.7;margin-bottom:3rem" class="r r2">Every finish is hand-applied by our artisans. Samples available on request.</p>
 </section>
-
-<section class="fin-section">
-  <h2 data-a>White Oak — 12 Finishes</h2>
-  <p data-a="1">White Oak's light golden hue and prominent grain make it versatile across modern and traditional styles.</p>
-  <div class="swatch-grid" data-a="2">
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/ghost_white_grey_cerused.jpg" alt="Ghost White / Grey Cerused"></div><div class="sg-name">Ghost White / Grey Cerused</div></div>
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/ghost_white_living.jpg" alt="Ghost White Living"></div><div class="sg-name">Ghost White Living</div><div class="sg-desc">Living finish — evolves over time</div></div>
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/jet_ghost_cerused.jpg" alt="Jet / Ghost Cerused"></div><div class="sg-name">Jet / Ghost Cerused</div></div>
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/jet_grey_cerused.jpg" alt="Jet / Grey Cerused"></div><div class="sg-name">Jet / Grey Cerused</div></div>
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/natural_ghost_cerused.jpg" alt="Natural / Ghost Cerused"></div><div class="sg-name">Natural / Ghost Cerused</div></div>
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/natural_grey_cerused.jpg" alt="Natural / Grey Cerused"></div><div class="sg-name">Natural / Grey Cerused</div></div>
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/natural_white_oak.jpg" alt="Natural White Oak"></div><div class="sg-name">Natural White Oak</div></div>
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/overcast_white_cerused.jpg" alt="Overcast / White Cerused"></div><div class="sg-name">Overcast / White Cerused</div></div>
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/smoke_pure_living.jpg" alt="Smoke / Pure Living"></div><div class="sg-name">Smoke / Pure Living</div><div class="sg-desc">Living finish — evolves over time</div></div>
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/smoke_white_living.jpg" alt="Smoke White Living"></div><div class="sg-name">Smoke White Living</div><div class="sg-desc">Living finish — evolves over time</div></div>
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/white_5_percent.jpg" alt="White 5%"></div><div class="sg-name">White 5%</div></div>
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/white_out_shadow_cerused.jpg" alt="White Out / Shadow Cerused"></div><div class="sg-name">White Out / Shadow Cerused</div></div>
+<section style="padding:0 4vw 4rem">
+  <h2 style="font-weight:800;font-size:1.2rem;color:var(--tx);margin-bottom:.3rem" class="r">White Oak — 12 Finishes</h2>
+  <p style="font-size:.78rem;color:var(--tx3);margin-bottom:1.5rem" class="r r1">Light golden hue with prominent grain.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1.2rem" class="r r2">
+    <div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/ghost_white_grey_cerused.jpg" alt="Ghost White / Grey Cerused" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Ghost White / Grey Cerused</div></div><div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/ghost_white_living.jpg" alt="Ghost White Living" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Ghost White Living</div></div><div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/jet_ghost_cerused.jpg" alt="Jet / Ghost Cerused" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Jet / Ghost Cerused</div></div><div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/jet_grey_cerused.jpg" alt="Jet / Grey Cerused" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Jet / Grey Cerused</div></div><div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/natural_ghost_cerused.jpg" alt="Natural / Ghost Cerused" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Natural / Ghost Cerused</div></div><div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/natural_grey_cerused.jpg" alt="Natural / Grey Cerused" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Natural / Grey Cerused</div></div><div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/natural_white_oak.jpg" alt="Natural White Oak" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Natural White Oak</div></div><div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/overcast_white_cerused.jpg" alt="Overcast / White Cerused" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Overcast / White Cerused</div></div><div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/smoke_pure_living.jpg" alt="Smoke / Pure Living" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Smoke / Pure Living</div></div><div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/smoke_white_living.jpg" alt="Smoke White Living" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Smoke White Living</div></div><div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/white_5_percent.jpg" alt="White 5%" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">White 5%</div></div><div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_white_oak/white_out_shadow_cerused.jpg" alt="White Out / Shadow Cerused" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">White Out / Shadow Cerused</div></div>
   </div>
-
-  <h2 data-a>Walnut — 6 Finishes</h2>
-  <p data-a="1">Walnut's rich dark tones and lustrous surface make it the choice for luxury interiors.</p>
-  <div class="swatch-grid" data-a="2">
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/natural_walnut.jpg" alt="Natural Walnut"></div><div class="sg-name">Natural Walnut</div></div>
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/pure_living.jpg" alt="Pure Living"></div><div class="sg-name">Pure Living</div><div class="sg-desc">Living finish — evolves over time</div></div>
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/shade_pure_living.jpg" alt="Shade Pure Living"></div><div class="sg-name">Shade Pure Living</div><div class="sg-desc">Living finish — evolves over time</div></div>
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/shadow.jpg" alt="Shadow"></div><div class="sg-name">Shadow</div></div>
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/silver_lining_living.jpg" alt="Silver Lining Living"></div><div class="sg-name">Silver Lining Living</div><div class="sg-desc">Living finish — evolves over time</div></div>
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/gray_ash.jpg" alt="Gray Ash"></div><div class="sg-name">Gray Ash</div></div>
+</section><section style="padding:0 4vw 4rem">
+  <h2 style="font-weight:800;font-size:1.2rem;color:var(--tx);margin-bottom:.3rem" class="r">Walnut — 6 Finishes</h2>
+  <p style="font-size:.78rem;color:var(--tx3);margin-bottom:1.5rem" class="r r1">Rich dark tones and lustrous surface.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1.2rem" class="r r2">
+    <div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/natural_walnut.jpg" alt="Natural Walnut" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Natural Walnut</div></div><div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/pure_living.jpg" alt="Pure Living" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Pure Living</div></div><div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/shade_pure_living.jpg" alt="Shade Pure Living" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Shade Pure Living</div></div><div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/shadow.jpg" alt="Shadow" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Shadow</div></div><div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/silver_lining_living.jpg" alt="Silver Lining Living" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Silver Lining Living</div></div><div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_walnut/gray_ash.jpg" alt="Gray Ash" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Gray Ash</div></div>
   </div>
-
-  <h2 data-a>Reclaimed European Oak — 3 Finishes</h2>
-  <p data-a="1">Salvaged from older structures, each piece of reclaimed oak tells its own story.</p>
-  <div class="swatch-grid" data-a="2">
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_reclaimed_oak/ghost_white_grey_cerused.jpg" alt="Ghost White / Grey Cerused"></div><div class="sg-name">Ghost White / Grey Cerused</div></div>
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_reclaimed_oak/ghost_white_living.jpg" alt="Ghost White Living"></div><div class="sg-name">Ghost White Living</div><div class="sg-desc">Living finish — evolves over time</div></div>
-    <div class="sg-card"><div class="sg-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_reclaimed_oak/silver_lining_living.jpg" alt="Silver Lining Living"></div><div class="sg-name">Silver Lining Living</div><div class="sg-desc">Living finish — evolves over time</div></div>
+</section><section style="padding:0 4vw 4rem">
+  <h2 style="font-weight:800;font-size:1.2rem;color:var(--tx);margin-bottom:.3rem" class="r">Reclaimed Oak — 3 Finishes</h2>
+  <p style="font-size:.78rem;color:var(--tx3);margin-bottom:1.5rem" class="r r1">Salvaged wood, each piece unique.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1.2rem" class="r r2">
+    <div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_reclaimed_oak/ghost_white_grey_cerused.jpg" alt="Ghost White / Grey Cerused" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Ghost White / Grey Cerused</div></div><div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_reclaimed_oak/ghost_white_living.jpg" alt="Ghost White Living" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Ghost White Living</div></div><div style="text-align:center"><div style="width:110px;height:110px;border-radius:50%;overflow:hidden;margin:0 auto .6rem;background:var(--bg2)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/finishes_reclaimed_oak/silver_lining_living.jpg" alt="Silver Lining Living" style="width:100%;height:100%;object-fit:cover"></div><div style="font-size:.65rem;font-weight:600;color:var(--tx)">Silver Lining Living</div></div>
   </div>
 </section>
-
-<section class="paint-section">
-  <h2 data-a>Paint Options</h2>
-  <p data-a="1">Available on select pieces (Eisberg, Juxtapo, Robin). High Polish for a glossy lacquer finish, Matte for a flat urethane sheen.</p>
-  <div class="paint-grid" data-a="2">
-    <div class="paint-card"><h4>High Polish Jet Black</h4><span>Glossy lacquer</span></div>
-    <div class="paint-card"><h4>High Polish Ghost White</h4><span>Glossy lacquer</span></div>
-    <div class="paint-card"><h4>High Polish Gun Gray</h4><span>Glossy lacquer</span></div>
-    <div class="paint-card"><h4>High Polish Storm Gray</h4><span>Glossy lacquer</span></div>
-    <div class="paint-card"><h4>High Polish Char Brown</h4><span>Glossy lacquer</span></div>
-    <div class="paint-card"><h4>Matte Jet Black</h4><span>Flat urethane</span></div>
-    <div class="paint-card"><h4>Matte Ghost White</h4><span>Flat urethane</span></div>
-    <div class="paint-card"><h4>Matte Gun Gray</h4><span>Flat urethane</span></div>
-    <div class="paint-card"><h4>Matte Storm Gray</h4><span>Flat urethane</span></div>
-    <div class="paint-card"><h4>Matte Char Brown</h4><span>Flat urethane</span></div>
-  </div>
+<section style="padding:6rem 4vw;text-align:center;border-top:1px solid var(--bdr)">
+  <h2 style="font-weight:800;font-size:1.6rem;color:var(--tx);margin-bottom:.6rem" class="r">Need a sample?</h2>
+  <p style="font-size:.85rem;color:var(--tx2);margin-bottom:1.5rem" class="r r1">We offer material samples and sample chains.</p>
+  <a href="contact.html" style="display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.8rem;background:var(--tx);color:var(--bg);font-family:var(--font);font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase" class="r r2">Request samples <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </section>
-
-<div class="note" data-a>
-  <h3>About Living Finishes</h3>
-  <p>Our Living finishes are natural hand-applied finishes that will change over time more than any of our other finishes. You may feel the need to apply a natural oil rejuvenator periodically (typically once or twice a year). This product can be purchased directly from us. This natural evolution is by design — your piece develops character unique to your home.</p>
 </div>
-
-<section class="cta-band">
-  <h2 data-a>Need a sample?</h2>
-  <p data-a="1">We offer material samples and sample chains. Just ask.</p>
-  <a href="contact.html" class="bd" data-a="2">Request samples <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-</section>
-
-<footer><div class="ft"><div class="fb"><span class="logo">Facet</span><p>Contemporary furniture with an artisan's touch. Designed and handcrafted in Birmingham, Alabama by MDM Design Studio.</p><div class="social"><a href="https://www.facebook.com/facetfurniture/" target="_blank" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a><a href="https://www.instagram.com/mdmdesignstudio/" target="_blank" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a><a href="https://www.pinterest.com/mdmdesignstudio/facet-furniture/" target="_blank" aria-label="Pinterest"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.15 9.42 7.6 11.18-.1-.94-.2-2.38.04-3.41.22-.93 1.4-5.93 1.4-5.93s-.36-.72-.36-1.78c0-1.66.97-2.91 2.17-2.91 1.02 0 1.52.77 1.52 1.69 0 1.03-.66 2.57-1 3.99-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.25 3.78-5.5 0-2.88-2.07-4.89-5.02-4.89-3.42 0-5.43 2.57-5.43 5.22 0 1.03.4 2.14.89 2.74.1.12.11.22.08.34-.09.38-.3 1.2-.34 1.36-.05.22-.18.26-.42.16-1.56-.73-2.53-3.01-2.53-4.84 0-3.94 2.86-7.56 8.26-7.56 4.33 0 7.71 3.09 7.71 7.21 0 4.31-2.72 7.78-6.49 7.78-1.27 0-2.46-.66-2.87-1.44l-.78 2.98c-.28 1.09-1.04 2.45-1.55 3.28C9.58 23.81 10.77 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg></a></div></div><div class="fc"><h5>Collection</h5><a href="index.html#col">Tables</a><a href="index.html#col">Storage</a><a href="index.html#col">Seating</a><a href="index.html#col">Bedroom</a><a href="index.html#col">Mirrors</a></div><div class="fc"><h5>Resources</h5><a href="finishes.html">Finishes</a><a href="faq.html">FAQ</a><a href="blog.html">Journal</a><a href="contact.html">Contact</a></div><div class="fc"><h5>Contact</h5><a href="mailto:info@facetfurniture.com">info@facetfurniture.com</a><a href="#">4306 Powell Ave S<br>Birmingham, AL 35222</a></div></div><div class="fbot"><span>&copy; 2026 Facet · MDM Design Studio</span><span>Mon–Fri, 8am–5pm CST</span></div></footer>
-<script>const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:.05,rootMargin:'0px 0px -30px 0px'});document.querySelectorAll('[data-a]').forEach(el=>o.observe(el));</script>
+<footer style="background:var(--tx);color:rgba(255,255,255,.35);padding:4rem 4vw 2rem;margin-top:4rem">
+  <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem">
+    <div>
+      <div style="font-weight:800;font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;color:white;margin-bottom:.8rem">Facet</div>
+      <p style="font-size:.75rem;line-height:1.7;max-width:260px;margin-bottom:1rem">Contemporary furniture with an artisan's touch. Designed and handcrafted in Birmingham, Alabama by MDM Design Studio.</p>
+      <div style="display:flex;gap:1rem">
+        <a href="https://www.facebook.com/facetfurniture/" target="_blank" style="color:rgba(255,255,255,.3)"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/mdmdesignstudio/" target="_blank" style="color:rgba(255,255,255,.3)"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg></a>
+        <a href="https://www.pinterest.com/mdmdesignstudio/facet-furniture/" target="_blank" style="color:rgba(255,255,255,.3)"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.15 9.42 7.6 11.18-.1-.94-.2-2.38.04-3.41.22-.93 1.4-5.93 1.4-5.93s-.36-.72-.36-1.78c0-1.66.97-2.91 2.17-2.91 1.02 0 1.52.77 1.52 1.69 0 1.03-.66 2.57-1 3.99-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.25 3.78-5.5 0-2.88-2.07-4.89-5.02-4.89-3.42 0-5.43 2.57-5.43 5.22 0 1.03.4 2.14.89 2.74.1.12.11.22.08.34-.09.38-.3 1.2-.34 1.36-.05.22-.18.26-.42.16-1.56-.73-2.53-3.01-2.53-4.84 0-3.94 2.86-7.56 8.26-7.56 4.33 0 7.71 3.09 7.71 7.21 0 4.31-2.72 7.78-6.49 7.78-1.27 0-2.46-.66-2.87-1.44l-.78 2.98c-.28 1.09-1.04 2.45-1.55 3.28C9.58 23.81 10.77 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <div style="font-weight:700;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.15);margin-bottom:.8rem">Collection</div>
+      <a href="index.html#col" style="display:block;font-size:.75rem;margin-bottom:.5rem">Tables</a>
+      <a href="index.html#col" style="display:block;font-size:.75rem;margin-bottom:.5rem">Storage</a>
+      <a href="index.html#col" style="display:block;font-size:.75rem;margin-bottom:.5rem">Seating</a>
+      <a href="index.html#col" style="display:block;font-size:.75rem;margin-bottom:.5rem">Bedroom</a>
+    </div>
+    <div>
+      <div style="font-weight:700;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.15);margin-bottom:.8rem">Resources</div>
+      <a href="finishes.html" style="display:block;font-size:.75rem;margin-bottom:.5rem">Finishes</a>
+      <a href="faq.html" style="display:block;font-size:.75rem;margin-bottom:.5rem">FAQ</a>
+      <a href="blog.html" style="display:block;font-size:.75rem;margin-bottom:.5rem">Journal</a>
+      <a href="contact.html" style="display:block;font-size:.75rem;margin-bottom:.5rem">Contact</a>
+    </div>
+    <div>
+      <div style="font-weight:700;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.15);margin-bottom:.8rem">Contact</div>
+      <a href="mailto:info@facetfurniture.com" style="display:block;font-size:.75rem;margin-bottom:.5rem">info@facetfurniture.com</a>
+      <span style="font-size:.75rem;line-height:1.6">4306 Powell Ave S<br>Birmingham, AL 35222</span>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,.06);padding-top:1.2rem;display:flex;justify-content:space-between;font-size:.6rem;color:rgba(255,255,255,.12)">
+    <span>&copy; 2026 Facet / MDM Design Studio</span><span>Mon-Fri 8am-5pm CST</span>
+  </div>
+</footer>
+<script>
+var observer = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) {
+    if (entries[i].isIntersecting) {
+      entries[i].target.classList.add('v');
+    }
+  }
+}, {threshold: 0.05, rootMargin: '0px 0px -30px 0px'});
+var els = document.querySelectorAll('.r');
+for (var i = 0; i < els.length; i++) { observer.observe(els[i]); }
+</script>
 </body>
 </html>

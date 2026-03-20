@@ -1,123 +1,49 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pure Chair - Facet Furniture</title>
-<style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap');
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Pure Chair - Facet Furniture</title><style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap');
 :root{--bg:#F5F4F0;--bg2:#EDECE7;--surface:#FAFAF7;--tx:#1C1C1A;--tx2:#58564F;--tx3:#8E8C85;--tx4:#B8B6B0;--bdr:rgba(0,0,0,.07);--font:'Montserrat',sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font);background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;overflow-x:hidden}::selection{background:var(--tx);color:var(--bg)}img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
 .r{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}.r.v{opacity:1;transform:none}.r1{transition-delay:.1s}.r2{transition-delay:.2s}.r3{transition-delay:.3s}
+.nk{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3)}
+.qb{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx);padding:.55rem 1.2rem;border:1.5px solid var(--tx)}
+.fh{font-weight:700;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.15);margin-bottom:.8rem}
+.fl{display:block;font-size:.75rem;margin-bottom:.5rem}
+.pill{font-family:var(--font);font-size:.62rem;font-weight:500;padding:.45rem .8rem;border:1.5px solid var(--bdr);background:transparent;color:var(--tx2);cursor:pointer;transition:all .15s}.pill:hover{border-color:var(--tx);color:var(--tx)}.pill.on{background:var(--tx);color:var(--bg);border-color:var(--tx)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.8rem;background:var(--tx);color:var(--bg);font-family:var(--font);font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:none;cursor:pointer;transition:all .2s}.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.1)}
+.btn:disabled,.btn.disabled{opacity:.3;cursor:not-allowed;transform:none;box-shadow:none}
+@media(max-width:900px){.nv a:not(.qb){display:none}.fg{grid-template-columns:1fr !important}}
 
-.gal{background:white;display:flex;align-items:center;justify-content:center;padding:2rem;min-height:400px}
-.gal img{max-width:100%;max-height:60vh;object-fit:contain}
+.gal{background:white;display:flex;align-items:center;justify-content:center;padding:2rem;min-height:350px}
+.gal img{max-width:100%;max-height:55vh;object-fit:contain}
 .thumbs{display:flex;gap:4px;margin-top:4px;overflow-x:auto;padding:2px 0}
-.thumb{width:68px;height:68px;background:white;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:4px;border:2px solid transparent;flex-shrink:0}
+.thumb{width:65px;height:65px;background:white;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:3px;border:2px solid transparent;flex-shrink:0}
 .thumb.act{border-color:var(--tx)}
 .thumb img{max-width:100%;max-height:100%;object-fit:contain}
-.pill{font-family:var(--font);font-size:.62rem;font-weight:500;padding:.45rem .8rem;border:1.5px solid var(--bdr);background:transparent;color:var(--tx2);cursor:pointer}
-.pill:hover{border-color:var(--tx);color:var(--tx)}
-.pill.on{background:var(--tx);color:var(--bg);border-color:var(--tx)}
 @media(max-width:900px){.phero{grid-template-columns:1fr !important}}
-
-@media(max-width:900px){.navlinks a:not(:last-child){display:none}.phero{grid-template-columns:1fr !important}}
-</style></head><body>
-<nav id="nav" style="position:fixed;top:0;left:0;right:0;z-index:900;padding:1.4rem 4vw;display:flex;justify-content:space-between;align-items:center;background:rgba(245,244,240,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr)">
-  <a href="../index.html" style="font-weight:800;font-size:.95rem;letter-spacing:.32em;text-transform:uppercase;color:var(--tx)">Facet</a>
-  <div style="display:flex;align-items:center;gap:2rem" class="navlinks">
-    <a href="../index.html#col" style="font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3)">Collection</a>
-    <a href="../finishes.html" style="font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3)">Finishes</a>
-    <a href="../faq.html" style="font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3)">FAQ</a>
-    <a href="../contact.html" style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx);padding:.55rem 1.2rem;border:1.5px solid var(--tx)">Request Quote</a>
-  </div>
-</nav><div style="padding-top:5rem">
+@media(max-width:680px){.more-g{grid-template-columns:1fr !important}}</style></head><body><nav style="position:fixed;top:0;left:0;right:0;z-index:900;padding:1.2rem 4vw;display:flex;justify-content:space-between;align-items:center;background:rgba(245,244,240,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr)"><a href="../index.html" style="font-weight:800;font-size:.95rem;letter-spacing:.32em;text-transform:uppercase;color:var(--tx)">Facet</a><div style="display:flex;align-items:center;gap:2rem" class="nv"><a href="../index.html#col" class="nk">Collection</a><a href="../finishes.html" class="nk">Finishes</a><a href="../faq.html" class="nk">FAQ</a><a href="../contact.html" class="qb">Request Quote</a></div></nav><div style="padding-top:4.5rem">
 <div class="phero" style="display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;padding:2rem 4vw 3rem;align-items:start">
-  <div>
-    <div class="gal" id="g0" style=""><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/12_pure_chair/frontside.jpg" alt="Pure Chair"></div>
-    <div class="thumbs"><div class="thumb act" onclick="show(0)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/12_pure_chair/frontside.jpg" alt="View 1"></div></div>
-  </div>
-  <div style="position:sticky;top:6rem">
-    <div style="font-size:.55rem;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--tx3);margin-bottom:1rem">SKU 116</div>
-    <h1 style="font-weight:800;font-size:clamp(1.6rem,2.5vw,2.2rem);color:var(--tx);margin-bottom:.6rem;letter-spacing:-.02em">Pure Chair</h1>
-    <p style="font-size:.82rem;color:var(--tx2);line-height:1.7;margin-bottom:1rem">Minimalist — leather seat, dovetail joinery.</p>
-    <div style="font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--tx3);margin-bottom:.3rem">Dimensions: Standard or High Back</div>
-    <div style="font-size:.68rem;font-style:italic;color:var(--tx3);margin-bottom:2rem">Shown: White Oak, Smoke White Living</div>
-    <div style="margin-bottom:1.2rem">
-    <div style="font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--tx3);margin-bottom:.4rem">Wood</div>
-    <div style="display:flex;flex-wrap:wrap;gap:4px"><button class="pill" onclick="sel(this)">Walnut</button><button class="pill" onclick="sel(this)">White Oak</button></div>
-  </div><div style="margin-bottom:1.2rem">
-    <div style="font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--tx3);margin-bottom:.4rem">Variant</div>
-    <div style="display:flex;flex-wrap:wrap;gap:4px"><button class="pill" onclick="sel(this)">Standard Back</button><button class="pill" onclick="sel(this)">High Back</button></div>
-  </div><div style="margin-bottom:1.2rem">
-    <div style="font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--tx3);margin-bottom:.4rem">Finish</div>
-    <div style="display:flex;flex-wrap:wrap;gap:4px"><button class="pill" onclick="sel(this)">Natural Walnut</button><button class="pill" onclick="sel(this)">Natural White Oak</button><button class="pill" onclick="sel(this)">Shadow</button><button class="pill" onclick="sel(this)">Pure Living</button><button class="pill" onclick="sel(this)">Silver Lining Living</button><button class="pill" onclick="sel(this)">Ghost White Living</button><button class="pill" onclick="sel(this)">Smoke White Living</button></div>
-  </div>
+  <div><div class="gal" id="g0" style=""><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/12_pure_chair/frontside.jpg" alt="Pure Chair"></div><div class="thumbs"><div class="thumb act" onclick="showImg(0)"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/12_pure_chair/frontside.jpg" alt="View 1"></div></div></div>
+  <div style="position:sticky;top:5.5rem">
+    <h1 style="font-weight:800;font-size:clamp(1.5rem,2.5vw,2rem);color:var(--tx);margin-bottom:.6rem;letter-spacing:-.02em">Pure Chair</h1>
+    <p style="font-size:.82rem;color:var(--tx2);line-height:1.7;margin-bottom:.8rem">Embrace the minimalist charm of the Pure Chair, crafted in White Oak or Walnut with distinct grain patterns and joinery. Featuring a high-resilience urethane padded leather seat, it offers both style and comfort.</p>
+    <div style="font-size:.65rem;font-weight:600;letter-spacing:.08em;color:var(--tx3);margin-bottom:.3rem">Dimensions: Standard or High Back</div>
+    <div style="font-size:.68rem;font-style:italic;color:var(--tx4);margin-bottom:2rem">Shown: White Oak with a Smoke White Living finish</div>
+    <div style="margin-bottom:1.2rem"><div style="font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--tx3);margin-bottom:.4rem">Wood</div><div style="display:flex;flex-wrap:wrap;gap:4px"><button class="pill" data-group="0" onclick="sel(this,0)">Walnut</button><button class="pill" data-group="0" onclick="sel(this,0)">White Oak</button></div></div><div style="margin-bottom:1.2rem"><div style="font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--tx3);margin-bottom:.4rem">Variant</div><div style="display:flex;flex-wrap:wrap;gap:4px"><button class="pill" data-group="1" onclick="sel(this,1)">Standard Back</button><button class="pill" data-group="1" onclick="sel(this,1)">High Back</button></div></div><div style="margin-bottom:1.2rem"><div style="font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--tx3);margin-bottom:.4rem">Finish</div><div style="display:flex;flex-wrap:wrap;gap:4px"><button class="pill" data-group="2" onclick="sel(this,2)">Natural Walnut</button><button class="pill" data-group="2" onclick="sel(this,2)">Natural White Oak</button><button class="pill" data-group="2" onclick="sel(this,2)">Shadow</button><button class="pill" data-group="2" onclick="sel(this,2)">Pure Living</button><button class="pill" data-group="2" onclick="sel(this,2)">Silver Lining Living</button><button class="pill" data-group="2" onclick="sel(this,2)">Ghost White Living</button><button class="pill" data-group="2" onclick="sel(this,2)">Smoke White Living</button></div></div>
     <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--bdr)">
-      <a href="../contact.html" style="display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.8rem;background:var(--tx);color:var(--bg);font-family:var(--font);font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase">Request a quote <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <button id="quoteBtn" class="btn disabled" disabled onclick="sendQuote()">Select all options to request a quote <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      <p id="quoteMsg" style="font-size:.6rem;color:var(--tx4);margin-top:.5rem">Please select one option from each category above.</p>
     </div>
   </div>
 </div>
-<div style="padding:4rem 4vw;max-width:650px">
-  <h2 style="font-weight:800;font-size:1.2rem;color:var(--tx);margin-bottom:.8rem">About this piece</h2>
-  <p style="font-size:.85rem;color:var(--tx2);line-height:1.85">Standard or high-back. High-resilience urethane padded leather seat.</p>
+<div style="padding:3rem 4vw;max-width:680px">
+  <h2 style="font-weight:800;font-size:1.1rem;color:var(--tx);margin-bottom:1rem">About this piece</h2>
+  <p style="font-size:.85rem;color:var(--tx2);line-height:1.85;margin-bottom:1rem">The embodiment of understated elegance, the Pure Chair seamlessly integrates into any living space, owing to its uncomplicated and genuine form. Crafted with the highest attention to detail, its wooden frame flaunts exquisite grain patterns and distinctly defined joinery points, making each chair an individual masterpiece.</p><p style="font-size:.85rem;color:var(--tx2);line-height:1.85;margin-bottom:1rem">Catering to diverse seating preferences, this wooden chair is available in both standard and high-back variations, granting adaptability without sacrificing style. Whether gracing a corporate office, an inviting foyer, or being the centerpiece of a dining room, the Pure Chair effortlessly communicates sophistication.</p>
 </div>
 <div style="padding:0 4vw 4rem">
-  <h2 style="font-weight:800;font-size:1.2rem;color:var(--tx);margin-bottom:1.5rem">More from the collection</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3px"><a href="eisberg-entry-table.html" style="background:white;display:block">
-    <div style="display:flex;align-items:center;justify-content:center;padding:1rem;aspect-ratio:4/3;background:white"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/01_eisberg_entry_table/back_view.jpg" alt="Eisberg Entry Table" style="max-width:100%;max-height:100%;object-fit:contain" loading="lazy"></div>
-    <div style="padding:1rem;background:var(--bg)"><div style="font-weight:700;font-size:.78rem;color:var(--tx)">Eisberg Entry Table</div><div style="font-size:.6rem;color:var(--tx3)">undefined</div></div>
-  </a><a href="prodigieux-credenza.html" style="background:white;display:block">
-    <div style="display:flex;align-items:center;justify-content:center;padding:1rem;aspect-ratio:4/3;background:white"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/02_prodigieux_credenza/front_top.jpg" alt="Prodigieux Credenza" style="max-width:100%;max-height:100%;object-fit:contain" loading="lazy"></div>
-    <div style="padding:1rem;background:var(--bg)"><div style="font-weight:700;font-size:.78rem;color:var(--tx)">Prodigieux Credenza</div><div style="font-size:.6rem;color:var(--tx3)">undefined</div></div>
-  </a><a href="phylo-hutch.html" style="background:white;display:block">
-    <div style="display:flex;align-items:center;justify-content:center;padding:1rem;aspect-ratio:4/3;background:white"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/03_phylo_hutch/front_view.jpg" alt="Phylo Hutch" style="max-width:100%;max-height:100%;object-fit:contain" loading="lazy"></div>
-    <div style="padding:1rem;background:var(--bg)"><div style="font-weight:700;font-size:.78rem;color:var(--tx)">Phylo Hutch</div><div style="font-size:.6rem;color:var(--tx3)">undefined</div></div>
-  </a></div>
-</div></div><footer style="background:var(--tx);color:rgba(255,255,255,.35);padding:4rem 4vw 2rem;margin-top:4rem">
-  <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem">
-    <div>
-      <div style="font-weight:800;font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;color:white;margin-bottom:.8rem">Facet</div>
-      <p style="font-size:.75rem;line-height:1.7;max-width:260px;margin-bottom:1rem">Contemporary furniture with an artisan's touch. Designed and handcrafted in Birmingham, Alabama by MDM Design Studio.</p>
-      <div style="display:flex;gap:1rem">
-        <a href="https://www.facebook.com/facetfurniture/" target="_blank" style="color:rgba(255,255,255,.3)"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-        <a href="https://www.instagram.com/mdmdesignstudio/" target="_blank" style="color:rgba(255,255,255,.3)"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg></a>
-        <a href="https://www.pinterest.com/mdmdesignstudio/facet-furniture/" target="_blank" style="color:rgba(255,255,255,.3)"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.15 9.42 7.6 11.18-.1-.94-.2-2.38.04-3.41.22-.93 1.4-5.93 1.4-5.93s-.36-.72-.36-1.78c0-1.66.97-2.91 2.17-2.91 1.02 0 1.52.77 1.52 1.69 0 1.03-.66 2.57-1 3.99-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.25 3.78-5.5 0-2.88-2.07-4.89-5.02-4.89-3.42 0-5.43 2.57-5.43 5.22 0 1.03.4 2.14.89 2.74.1.12.11.22.08.34-.09.38-.3 1.2-.34 1.36-.05.22-.18.26-.42.16-1.56-.73-2.53-3.01-2.53-4.84 0-3.94 2.86-7.56 8.26-7.56 4.33 0 7.71 3.09 7.71 7.21 0 4.31-2.72 7.78-6.49 7.78-1.27 0-2.46-.66-2.87-1.44l-.78 2.98c-.28 1.09-1.04 2.45-1.55 3.28C9.58 23.81 10.77 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg></a>
-      </div>
-    </div>
-    <div>
-      <div style="font-weight:700;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.15);margin-bottom:.8rem">Collection</div>
-      <a href="../index.html#col" style="display:block;font-size:.75rem;margin-bottom:.5rem">Tables</a>
-      <a href="../index.html#col" style="display:block;font-size:.75rem;margin-bottom:.5rem">Storage</a>
-      <a href="../index.html#col" style="display:block;font-size:.75rem;margin-bottom:.5rem">Seating</a>
-      <a href="../index.html#col" style="display:block;font-size:.75rem;margin-bottom:.5rem">Bedroom</a>
-    </div>
-    <div>
-      <div style="font-weight:700;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.15);margin-bottom:.8rem">Resources</div>
-      <a href="../finishes.html" style="display:block;font-size:.75rem;margin-bottom:.5rem">Finishes</a>
-      <a href="../faq.html" style="display:block;font-size:.75rem;margin-bottom:.5rem">FAQ</a>
-      <a href="../blog.html" style="display:block;font-size:.75rem;margin-bottom:.5rem">Journal</a>
-      <a href="../contact.html" style="display:block;font-size:.75rem;margin-bottom:.5rem">Contact</a>
-    </div>
-    <div>
-      <div style="font-weight:700;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.15);margin-bottom:.8rem">Contact</div>
-      <a href="mailto:info@facetfurniture.com" style="display:block;font-size:.75rem;margin-bottom:.5rem">info@facetfurniture.com</a>
-      <span style="font-size:.75rem;line-height:1.6">4306 Powell Ave S<br>Birmingham, AL 35222</span>
-    </div>
-  </div>
-  <div style="border-top:1px solid rgba(255,255,255,.06);padding-top:1.2rem;display:flex;justify-content:space-between;font-size:.6rem;color:rgba(255,255,255,.12)">
-    <span>&copy; 2026 Facet / MDM Design Studio</span><span>Mon-Fri 8am-5pm CST</span>
-  </div>
-</footer>
-
-<script>
-var total=1;
-function show(i){for(var j=0;j<total;j++){document.getElementById('g'+j).style.display=j===i?'flex':'none'}var t=document.querySelectorAll('.thumb');for(var j=0;j<t.length;j++){t[j].className=j===i?'thumb act':'thumb'}}
-function sel(el){var sibs=el.parentElement.querySelectorAll('.pill');for(var i=0;i<sibs.length;i++){sibs[i].className='pill'}el.className='pill on'}
-</script><script>
-var observer = new IntersectionObserver(function(entries) {
-  for (var i = 0; i < entries.length; i++) {
-    if (entries[i].isIntersecting) {
-      entries[i].target.classList.add('v');
-    }
-  }
-}, {threshold: 0.05, rootMargin: '0px 0px -30px 0px'});
-var els = document.querySelectorAll('.r');
-for (var i = 0; i < els.length; i++) { observer.observe(els[i]); }
-</script></body></html>
+  <h2 style="font-weight:800;font-size:1.1rem;color:var(--tx);margin-bottom:1.5rem">More from the collection</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3px" class="more-g"><a href="eisberg-entry-table.html" style="background:white;display:block"><div style="display:flex;align-items:center;justify-content:center;padding:1rem;aspect-ratio:4/3;background:white"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/01_eisberg_entry_table/back_view.jpg" alt="Eisberg Entry Table" style="max-width:100%;max-height:100%;object-fit:contain" loading="lazy"></div><div style="padding:1rem;background:var(--bg)"><div style="font-weight:700;font-size:.78rem;color:var(--tx)">Eisberg Entry Table</div></div></a><a href="prodigieux-credenza.html" style="background:white;display:block"><div style="display:flex;align-items:center;justify-content:center;padding:1rem;aspect-ratio:4/3;background:white"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/02_prodigieux_credenza/front_top.jpg" alt="Prodigieux Credenza" style="max-width:100%;max-height:100%;object-fit:contain" loading="lazy"></div><div style="padding:1rem;background:var(--bg)"><div style="font-weight:700;font-size:.78rem;color:var(--tx)">Prodigieux Credenza</div></div></a><a href="phylo-hutch.html" style="background:white;display:block"><div style="display:flex;align-items:center;justify-content:center;padding:1rem;aspect-ratio:4/3;background:white"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/03_phylo_hutch/front_view.jpg" alt="Phylo Hutch" style="max-width:100%;max-height:100%;object-fit:contain" loading="lazy"></div><div style="padding:1rem;background:var(--bg)"><div style="font-weight:700;font-size:.78rem;color:var(--tx)">Phylo Hutch</div></div></a></div>
+</div></div><footer style="background:var(--tx);color:rgba(255,255,255,.35);padding:4rem 4vw 2rem;margin-top:4rem"><div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem" class="fg"><div><div style="font-weight:800;font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;color:white;margin-bottom:.8rem">Facet</div><p style="font-size:.75rem;line-height:1.7;max-width:260px;margin-bottom:1rem">Contemporary furniture with an artisan's touch. Designed and handcrafted in Birmingham, Alabama by MDM Design Studio.</p><div style="display:flex;gap:1rem"><a href="https://www.facebook.com/facetfurniture/" target="_blank" style="color:rgba(255,255,255,.3)"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a><a href="https://www.instagram.com/mdmdesignstudio/" target="_blank" style="color:rgba(255,255,255,.3)"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/></svg></a><a href="https://www.pinterest.com/mdmdesignstudio/facet-furniture/" target="_blank" style="color:rgba(255,255,255,.3)"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.15 9.42 7.6 11.18-.1-.94-.2-2.38.04-3.41.22-.93 1.4-5.93 1.4-5.93s-.36-.72-.36-1.78c0-1.66.97-2.91 2.17-2.91 1.02 0 1.52.77 1.52 1.69 0 1.03-.66 2.57-1 3.99-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.25 3.78-5.5 0-2.88-2.07-4.89-5.02-4.89-3.42 0-5.43 2.57-5.43 5.22 0 1.03.4 2.14.89 2.74.1.12.11.22.08.34-.09.38-.3 1.2-.34 1.36-.05.22-.18.26-.42.16-1.56-.73-2.53-3.01-2.53-4.84 0-3.94 2.86-7.56 8.26-7.56 4.33 0 7.71 3.09 7.71 7.21 0 4.31-2.72 7.78-6.49 7.78-1.27 0-2.46-.66-2.87-1.44l-.78 2.98c-.28 1.09-1.04 2.45-1.55 3.28C9.58 23.81 10.77 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg></a></div></div><div><div class="fh">Collection</div><a href="../index.html#col" class="fl">Tables</a><a href="../index.html#col" class="fl">Storage</a><a href="../index.html#col" class="fl">Seating</a><a href="../index.html#col" class="fl">Bedroom</a></div><div><div class="fh">Resources</div><a href="../finishes.html" class="fl">Finishes</a><a href="../faq.html" class="fl">FAQ</a><a href="../blog.html" class="fl">Journal</a><a href="../contact.html" class="fl">Contact</a></div><div><div class="fh">Contact</div><a href="mailto:info@facetfurniture.com" class="fl">info@facetfurniture.com</a><span style="font-size:.75rem;line-height:1.6">4306 Powell Ave S<br>Birmingham, AL 35222</span></div></div><div style="border-top:1px solid rgba(255,255,255,.06);padding-top:1.2rem;display:flex;justify-content:space-between;font-size:.6rem;color:rgba(255,255,255,.12)"><span>&copy; 2026 Facet / MDM Design Studio</span><span>Mon-Fri 8am-5pm CST</span></div></footer><script>
+var total=1,groups=3,selected={};
+function showImg(i){for(var j=0;j<total;j++){document.getElementById('g'+j).style.display=j===i?'flex':'none'}var t=document.querySelectorAll('.thumb');for(var j=0;j<t.length;j++){t[j].className=j===i?'thumb act':'thumb'}}
+function sel(el,g){var sibs=el.parentElement.querySelectorAll('.pill');for(var i=0;i<sibs.length;i++){sibs[i].className='pill'}el.className='pill on';selected[g]=el.textContent;checkReady()}
+function checkReady(){var keys=Object.keys(selected);var btn=document.getElementById('quoteBtn');var msg=document.getElementById('quoteMsg');if(keys.length>=groups){btn.disabled=false;btn.className='btn';btn.innerHTML='Request a quote <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';msg.textContent='All options selected. Click to send your quote request.';}else{var remaining=groups-keys.length;btn.disabled=true;btn.className='btn disabled';btn.innerHTML='Select all options to request a quote <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';msg.textContent=remaining+' option'+(remaining>1?'s':'')+' remaining.';}}
+function sendQuote(){var lines=['Product: Pure Chair','Dimensions: Standard or High Back',''];var labels=["Wood","Variant","Finish"];for(var i=0;i<groups;i++){lines.push(labels[i]+': '+(selected[i]||'Not selected'));}lines.push('');lines.push('--- Please fill in below ---');lines.push('Name: ');lines.push('Email: ');lines.push('Phone (optional): ');lines.push('Delivery location: ');lines.push('Additional notes: ');var subject=encodeURIComponent('Quote Request: Pure Chair');var body=encodeURIComponent(lines.join('\n'));window.location.href='mailto:info@facetfurniture.com?subject='+subject+'&body='+body;}
+</script><script>var o=new IntersectionObserver(function(e){for(var i=0;i<e.length;i++){if(e[i].isIntersecting)e[i].target.classList.add('v')}},{threshold:.05,rootMargin:'0px 0px -30px 0px'});var r=document.querySelectorAll('.r');for(var i=0;i<r.length;i++)o.observe(r[i]);</script></body></html>

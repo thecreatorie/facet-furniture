@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal — Facet Furniture</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero{padding:10rem 4vw 4rem;max-width:700px}
+.page-hero h1{font-weight:800;font-size:clamp(2.2rem,5vw,3.5rem);line-height:.95;color:var(--tx);letter-spacing:-.03em;margin-bottom:1rem}
+.page-hero p{font-size:.88rem;font-weight:400;color:var(--tx2);line-height:1.8}
+
+.blog-grid{padding:0 4vw 8rem;display:grid;grid-template-columns:1fr 1fr;gap:3px}
+.blog-card{background:white;overflow:hidden;cursor:pointer;transition:transform .3s}
+.blog-card:hover{transform:translateY(-4px)}
+.blog-card:first-child{grid-column:span 2}
+.blog-card:first-child .blog-img{aspect-ratio:21/9}
+.blog-img{aspect-ratio:16/10;overflow:hidden;background:var(--bg2);display:flex;align-items:center;justify-content:center;padding:2rem}
+.blog-img img{max-width:100%;max-height:100%;object-fit:contain;transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.blog-card:hover .blog-img img{transform:scale(1.03)}
+.blog-body{padding:1.8rem 2rem 2rem}
+.blog-date{font-size:.58rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--tx4);margin-bottom:.6rem}
+.blog-body h2{font-weight:800;font-size:1.05rem;color:var(--tx);margin-bottom:.6rem;letter-spacing:-.01em;line-height:1.3}
+.blog-card:first-child .blog-body h2{font-size:1.4rem}
+.blog-body p{font-size:.8rem;font-weight:400;color:var(--tx2);line-height:1.7}
+.blog-body .read-more{display:inline-flex;align-items:center;gap:.4rem;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--tx3);margin-top:1rem;transition:color .3s,gap .3s}
+.blog-card:hover .read-more{color:var(--tx);gap:.7rem}
+
+/* Article view */
+.article{padding:7rem 4vw 6rem;max-width:720px;margin:0 auto;display:none}
+.article.active{display:block}
+.article .back{display:inline-flex;align-items:center;gap:.5rem;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--tx3);margin-bottom:2rem;cursor:pointer;transition:color .3s}
+.article .back:hover{color:var(--tx)}
+.article .ey{margin-bottom:1rem}
+.article h1{font-weight:800;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--tx);margin-bottom:1.5rem;letter-spacing:-.02em;line-height:1.1}
+.article p{font-size:.9rem;font-weight:400;color:var(--tx2);line-height:1.9;margin-bottom:1.2rem}
+.article strong{font-weight:600;color:var(--tx)}
+.article h3{font-weight:800;font-size:1rem;color:var(--tx);margin:2rem 0 .8rem}
+
+#blogList,.article{transition:opacity .3s}
+
+@media(max-width:680px){.page-hero{padding:8rem 5vw 3rem}.blog-grid{padding:0 5vw 5rem;grid-template-columns:1fr}.blog-card:first-child{grid-column:span 1}.blog-card:first-child .blog-img{aspect-ratio:16/10}.article{padding:6rem 5vw 4rem}}
+</style>
+</head>
+<body>
+<div class="mm" id="mm"><button class="mx" onclick="document.getElementById('mm').classList.remove('open')">&times;</button><a href="index.html#col" onclick="document.getElementById('mm').classList.remove('open')">Collection</a><a href="finishes.html" onclick="document.getElementById('mm').classList.remove('open')">Finishes</a><a href="index.html#about" onclick="document.getElementById('mm').classList.remove('open')">Atelier</a><a href="contact.html" onclick="document.getElementById('mm').classList.remove('open')">Contact</a></div>
+<nav><a href="index.html" class="logo">Facet</a><div class="nav-r"><a href="index.html#col" class="nl">Collection</a><a href="finishes.html" class="nl">Finishes</a><a href="index.html#about" class="nl">Atelier</a><button class="nb" onclick="location.href='contact.html'">Request Quote</button><div class="ham" onclick="document.getElementById('mm').classList.add('open')"><span></span><span></span><span></span></div></div></nav>
+
+<div id="blogList">
+<section class="page-hero">
+  <div class="ey" data-a>Journal</div>
+  <h1 data-a="1">Insights &<br>Inspiration</h1>
+  <p data-a="2">Thoughts on materials, design process, and the craft behind every piece.</p>
+</section>
+
+<section class="blog-grid">
+  <div class="blog-card" data-a onclick="showArticle('a1')">
+    <div class="blog-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/blog_lifestyle/tv_stand_in_room.jpg" alt="Exploring Furniture Finishes" loading="lazy"></div>
+    <div class="blog-body">
+      <div class="blog-date">Finishes</div>
+      <h2>Exploring Furniture Finishes</h2>
+      <p>A deep dive into what finishes are, why they matter, and how to choose the right one for your space.</p>
+      <div class="read-more">Read <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </div>
+  </div>
+  <div class="blog-card" data-a onclick="showArticle('a2')">
+    <div class="blog-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/14_radiate_table/white_oak_details.jpg" alt="How To Design Custom Furniture" loading="lazy"></div>
+    <div class="blog-body">
+      <div class="blog-date">Design Guide</div>
+      <h2>How To Design Custom Furniture For Your Home</h2>
+      <p>A comprehensive guide to choosing materials, dimensions, finishes, and working with craftsmen.</p>
+      <div class="read-more">Read <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </div>
+  </div>
+  <div class="blog-card" data-a="1" onclick="showArticle('a3')">
+    <div class="blog-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/blog_lifestyle/eisberg_thumbnail.jpg" alt="Decoding Wood" loading="lazy"></div>
+    <div class="blog-body">
+      <div class="blog-date">Materials</div>
+      <h2>Decoding Wood: Walnut, White Oak, and Reclaimed Oak</h2>
+      <p>Understanding the characteristics, benefits, and considerations of three curated woods.</p>
+      <div class="read-more">Read <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ARTICLE: Exploring Furniture Finishes -->
+<div class="article" id="a1">
+  <div class="back" onclick="hideArticle()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back to Journal</div>
+  <div class="ey">Finishes</div>
+  <h1>Exploring Furniture Finishes</h1>
+  <p>Furniture finishes are paramount in defining the final appearance and durability of a piece. They can magnify the inherent beauty of wood, offer protection, and dictate the style of a room. At Facet Furniture, finishes are our forte.</p>
+  <h3>What is a furniture finish?</h3>
+  <p>Furniture finishes are protective layers applied to the surface of wooden pieces, enhancing their aesthetics and durability. More than just a superficial coating, they are specially formulated to bond with the wood, ensuring longevity and resistance against external elements.</p>
+  <h3>Why finishes matter</h3>
+  <p><strong>Enhanced aesthetics:</strong> Finishes can elevate the visual appeal of wooden furniture, highlighting its grain and adding depth to its natural color.</p>
+  <p><strong>Protection:</strong> They act as a shield against moisture, UV rays, scratches, and everyday wear and tear, ensuring your furniture stands the test of time.</p>
+  <p><strong>Maintenance:</strong> Finished furniture is easier to clean and less susceptible to staining compared to untreated wood.</p>
+  <h3>How to choose the right finish</h3>
+  <p><strong>Understand the ambiance:</strong> Think about the mood and style you want to convey. For a clean, modern feel, the Ghost White finish might be your go-to. If you're leaning towards a traditional warm tone, the Pure Living Finish might be more your style.</p>
+  <p><strong>Consider your needs:</strong> For furniture pieces that will face daily wear and tear, opt for finishes that offer heightened protection. On every Facet Furniture piece there are a wide variety of finishes to choose from, which get filtered as you select the type of wood you'd like to use on your project.</p>
+  <p><strong>Consult with experts:</strong> Our team is always ready to guide you through our range of finishes to find the perfect fit for your home. You can request a sample kit by contacting us at info@facetfurniture.com.</p>
+  <p>Finishes are the unsung heroes of furniture crafting. They encapsulate the essence, protect the core, and determine the lifespan of a piece. At Facet Furniture, our curated range of finishes is a testament to our commitment to quality, style, and longevity.</p>
+</div>
+
+<!-- ARTICLE: How To Design Custom Furniture -->
+<div class="article" id="a2">
+  <div class="back" onclick="hideArticle()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back to Journal</div>
+  <div class="ey">Design Guide</div>
+  <h1>How To Design Custom Furniture For Your Home</h1>
+  <p>The idea of custom furniture is appealing for many reasons. Whether you're looking to fill a specific space, achieve a unique aesthetic, or own a piece that tells a story, custom furniture is the answer.</p>
+  <h3>Understand the purpose</h3>
+  <p>Before diving into design details, consider what purpose your furniture will serve. Is it a functional piece like a dining table or a decorative accent like a coffee table?</p>
+  <h3>Choose your wood</h3>
+  <p><strong>White Oak:</strong> Known for its durability and fine grain, ideal for contemporary designs. <strong>Walnut:</strong> Rich, dark finish with an elegant grain pattern, perfect for classic, timeless pieces. <strong>Reclaimed Oak:</strong> For an eco-friendly, rustic look with rich history.</p>
+  <h3>Select a finish</h3>
+  <p>From the pale allure of Ghost White to the rich hues of Natural Walnut or the chic Shade Pure Living, the finish can dramatically change the piece's appearance. Think about the ambiance you want to create.</p>
+  <h3>Size and shape</h3>
+  <p>Measure your space. Ensure the furniture piece fits perfectly in its intended location. Consider movement around the piece — you don't want your new table blocking pathways.</p>
+  <h3>Timeline and budget</h3>
+  <p>Custom pieces take time. Factor in design approvals, material sourcing, and crafting. It's worth the wait for a unique piece crafted to perfection. Custom furniture can be more expensive than off-the-shelf pieces due to the specialized work involved. Set a budget but be flexible — it's a long-term investment.</p>
+  <h3>Collaborate with experts</h3>
+  <p>At Facet Furniture, we encourage our clients to work closely with our designers. They can guide you on latest trends, timeless designs, and the technicalities of furniture making. Custom furniture is more than just a piece of decor — it's an expression of your personal style, a tale of craftsmanship, and a cherished heirloom for future generations.</p>
+</div>
+
+<!-- ARTICLE: Decoding Wood -->
+<div class="article" id="a3">
+  <div class="back" onclick="hideArticle()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back to Journal</div>
+  <div class="ey">Materials</div>
+  <h1>Decoding Wood: Walnut, White Oak, and Reclaimed Oak</h1>
+  <p>At the heart of custom furniture lies the choice of material, particularly the type of wood. Three popular options we utilize here at Facet Furniture are Walnut, White Oak, and Reclaimed Oak.</p>
+  <h3>Walnut</h3>
+  <p>Walnut boasts a rich, deep hue ranging from dark brown to a light pale brown, often with contrasting darker streaks. The wood has a smooth, fine texture with a natural lustrous surface. The warm tones provide an elegant and sophisticated touch, making it a favorite for luxury interiors. Walnut is a hard, dense wood resistant to warping and shrinking, ideal for pieces that need to withstand wear.</p>
+  <h3>White Oak</h3>
+  <p>White Oak is characterized by its light to medium brown color with a slightly golden hue. It's strong, heavy, and highly durable with excellent moisture resistance. Its prominent ray fleck patterns when quartersawn make it versatile across both modern and traditional styles. While generally more affordable than walnut, top-grade white oak can still come with a significant price tag.</p>
+  <h3>Reclaimed European Oak</h3>
+  <p>Reclaimed Oak is salvaged from older structures and repurposed for new furniture. It often boasts a rustic appearance with notable wear, nail holes, and other marks that tell its story. Using reclaimed wood means fewer trees are cut down, contributing to environmental conservation. Each piece has its own history, ensuring no two pieces of furniture are alike. Old-growth oak used in historical buildings tends to be denser and stronger than new oak.</p>
+  <p>Selecting the perfect wood for your custom furniture is a crucial step in ensuring longevity, aesthetics, and overall satisfaction. Whatever you choose, remember that with proper care and maintenance, your custom furniture piece can serve as a cherished asset for years to come.</p>
+</div>
+
+<footer><div class="ft"><div class="fb"><span class="logo">Facet</span><p>Contemporary furniture with an artisan's touch. Designed and handcrafted in Birmingham, Alabama by MDM Design Studio.</p><div class="social"><a href="https://www.facebook.com/facetfurniture/" target="_blank" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a><a href="https://www.instagram.com/mdmdesignstudio/" target="_blank" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a><a href="https://www.pinterest.com/mdmdesignstudio/facet-furniture/" target="_blank" aria-label="Pinterest"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.15 9.42 7.6 11.18-.1-.94-.2-2.38.04-3.41.22-.93 1.4-5.93 1.4-5.93s-.36-.72-.36-1.78c0-1.66.97-2.91 2.17-2.91 1.02 0 1.52.77 1.52 1.69 0 1.03-.66 2.57-1 3.99-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.25 3.78-5.5 0-2.88-2.07-4.89-5.02-4.89-3.42 0-5.43 2.57-5.43 5.22 0 1.03.4 2.14.89 2.74.1.12.11.22.08.34-.09.38-.3 1.2-.34 1.36-.05.22-.18.26-.42.16-1.56-.73-2.53-3.01-2.53-4.84 0-3.94 2.86-7.56 8.26-7.56 4.33 0 7.71 3.09 7.71 7.21 0 4.31-2.72 7.78-6.49 7.78-1.27 0-2.46-.66-2.87-1.44l-.78 2.98c-.28 1.09-1.04 2.45-1.55 3.28C9.58 23.81 10.77 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg></a></div></div><div class="fc"><h5>Collection</h5><a href="index.html#col">Tables</a><a href="index.html#col">Storage</a><a href="index.html#col">Seating</a><a href="index.html#col">Bedroom</a><a href="index.html#col">Mirrors</a></div><div class="fc"><h5>Resources</h5><a href="finishes.html">Finishes</a><a href="faq.html">FAQ</a><a href="blog.html">Journal</a><a href="contact.html">Contact</a></div><div class="fc"><h5>Contact</h5><a href="mailto:info@facetfurniture.com">info@facetfurniture.com</a><a href="#">4306 Powell Ave S<br>Birmingham, AL 35222</a></div></div><div class="fbot"><span>&copy; 2026 Facet · MDM Design Studio</span><span>Mon–Fri, 8am–5pm CST</span></div></footer>
+
+<script>
+function showArticle(id){
+  document.getElementById('blogList').style.display='none';
+  document.querySelectorAll('.article').forEach(a=>a.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function hideArticle(){
+  document.querySelectorAll('.article').forEach(a=>a.classList.remove('active'));
+  document.getElementById('blogList').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:.05,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('[data-a]').forEach(el=>o.observe(el));
+</script>
+</body>
+</html>

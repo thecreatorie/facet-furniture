@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Facet Furniture</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero{padding:10rem 4vw 4rem;max-width:700px}
+.page-hero h1{font-weight:800;font-size:clamp(2.2rem,5vw,3.5rem);line-height:.95;color:var(--tx);letter-spacing:-.03em;margin-bottom:1rem}
+.page-hero p{font-size:.88rem;font-weight:400;color:var(--tx2);line-height:1.8}
+
+.faq-section{padding:0 4vw 8rem;max-width:800px}
+.faq-item{border-bottom:1px solid var(--bdr);padding:0}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:1.8rem 0;cursor:pointer;gap:2rem;transition:color .3s}
+.faq-q:hover{color:var(--tx2)}
+.faq-q h3{font-weight:700;font-size:.88rem;color:inherit;letter-spacing:.01em;line-height:1.4}
+.faq-q .icon{flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.faq-q .icon svg{transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.faq-item.open .faq-q .icon svg{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.16,1,.3,1),padding .3s}
+.faq-item.open .faq-a{max-height:600px}
+.faq-a-inner{padding:0 0 2rem;font-size:.85rem;font-weight:400;line-height:1.85;color:var(--tx2)}
+.faq-a-inner p{margin-bottom:1rem}
+.faq-a-inner p:last-child{margin-bottom:0}
+.faq-a-inner ul{margin:0 0 1rem 1.2rem;list-style:none}
+.faq-a-inner ul li{position:relative;padding-left:1rem;margin-bottom:.5rem;font-size:.82rem;color:var(--tx2);line-height:1.7}
+.faq-a-inner ul li::before{content:'·';position:absolute;left:0;font-weight:700;color:var(--tx3)}
+.faq-a-inner strong{font-weight:600;color:var(--tx)}
+
+.cta-band{padding:8rem 4vw;text-align:center;border-top:1px solid var(--bdr);margin-top:4rem}
+.cta-band h2{font-weight:800;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--tx);margin-bottom:.8rem;letter-spacing:-.02em}
+.cta-band p{font-size:.85rem;color:var(--tx2);margin-bottom:2rem}
+
+@media(max-width:680px){
+  .page-hero{padding:8rem 5vw 3rem}
+  .faq-section{padding:0 5vw 5rem}
+  .cta-band{padding:5rem 5vw}
+}
+</style>
+</head>
+<body>
+
+<div class="mm" id="mm"><button class="mx" onclick="document.getElementById('mm').classList.remove('open')">&times;</button><a href="index.html#col" onclick="document.getElementById('mm').classList.remove('open')">Collection</a><a href="index.html#fin" onclick="document.getElementById('mm').classList.remove('open')">Finishes</a><a href="index.html#about" onclick="document.getElementById('mm').classList.remove('open')">Atelier</a><a href="mailto:info@facetfurniture.com" onclick="document.getElementById('mm').classList.remove('open')">Quote</a></div>
+
+<nav>
+  <a href="index.html" class="logo">Facet</a>
+  <div class="nav-r">
+    <a href="index.html#col" class="nl">Collection</a>
+    <a href="index.html#fin" class="nl">Finishes</a>
+    <a href="index.html#about" class="nl">Atelier</a>
+    <button class="nb" onclick="location.href='mailto:info@facetfurniture.com'">Request Quote</button>
+    <div class="ham" onclick="document.getElementById('mm').classList.add('open')"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="ey" data-a>Support</div>
+  <h1 data-a="1">Frequently Asked<br>Questions</h1>
+  <p data-a="2">Everything you need to know about ordering, customization, delivery, and caring for your Facet furniture.</p>
+</section>
+
+<section class="faq-section">
+
+  <div class="faq-item" data-a>
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+      <h3>How do I get pricing?</h3>
+      <div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+    </div>
+    <div class="faq-a"><div class="faq-a-inner">
+      <p>Pricing is determined based on the options selected for each piece. To get pricing, please request a quote with your desired design choices for us to review.</p>
+      <p>This quote will be reviewed by a member of our Facet team for pricing, and the quote will be sent to the email you provide within a few days. This quote will give you all the details regarding price and a chance to review your order and make any changes, before the deposit is put down and the furniture starts being built.</p>
+      <p><strong>All our furniture is made to order.</strong></p>
+    </div></div>
+  </div>
+
+  <div class="faq-item" data-a>
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+      <h3>What is the expected lead time?</h3>
+      <div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+    </div>
+    <div class="faq-a"><div class="faq-a-inner">
+      <p>Average lead times are around <strong>8–12 weeks</strong>, but they can vary depending on the size of the order and/or if there are non-standard options chosen.</p>
+      <p>A more precise lead time will be provided in your quote once it has been reviewed and approved.</p>
+    </div></div>
+  </div>
+
+  <div class="faq-item" data-a>
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+      <h3>Can custom designs be created and options be chosen?</h3>
+      <div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+    </div>
+    <div class="faq-a"><div class="faq-a-inner">
+      <p>Absolutely. If you are interested in having us create a custom design, or explore a custom finish, size or addition to an existing design, please <a href="mailto:info@facetfurniture.com" style="color:var(--tx);font-weight:600;text-decoration:underline">contact us</a> and we will be happy to discuss your project and to start the creative design process.</p>
+      <p>Communication via phone may be needed as well. There will be a deposit to create the design. <strong>This deposit will be credited back once the order is placed.</strong> Extended lead times may apply.</p>
+    </div></div>
+  </div>
+
+  <div class="faq-item" data-a>
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+      <h3>What are the payment terms?</h3>
+      <div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+    </div>
+    <div class="faq-a"><div class="faq-a-inner">
+      <p>A <strong>50% deposit</strong> is required to initiate your order. The balance, including shipping charges and any applicable taxes, is due prior to shipment.</p>
+      <p>Payments can be made by <strong>check or credit card</strong>.</p>
+    </div></div>
+  </div>
+
+  <div class="faq-item" data-a>
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+      <h3>Can I get material samples?</h3>
+      <div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+    </div>
+    <div class="faq-a"><div class="faq-a-inner">
+      <p>Yes. Samples and sample chains are available for our material choices. Please <a href="mailto:info@facetfurniture.com" style="color:var(--tx);font-weight:600;text-decoration:underline">contact us</a> to discuss your needs.</p>
+    </div></div>
+  </div>
+
+  <div class="faq-item" data-a>
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+      <h3>What about shipping?</h3>
+      <div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+    </div>
+    <div class="faq-a"><div class="faq-a-inner">
+      <p>Furniture prices do not include shipping charges. Shipping will be included on your quote once the order has been approved.</p>
+      <p>Typically it is shipped to your business or a local receiver of your choice then delivered to its final destination at your discretion.</p>
+      <p>A careful inspection of each piece should be made at the time of delivery. If any damage is found, you must note your bill of lading and confirm the damage with the shipper, so we can take the appropriate action. <strong>After pieces have been inspected and placed, the sale is final.</strong></p>
+    </div></div>
+  </div>
+
+  <div class="faq-item" data-a>
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+      <h3>Is the work guaranteed?</h3>
+      <div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+    </div>
+    <div class="faq-a"><div class="faq-a-inner">
+      <p>At Facet Furniture, we stand behind all of our products. We take pride in knowing that you are receiving a high quality product that has been handcrafted and built to last, under normal use.</p>
+      <p>Each piece is <strong>guaranteed against structural defects in materials and workmanship for a period of 1 year</strong> after purchase date, under normal, typical use for the original owner. Should any of these defects arise, we will assess the situation and discuss the best course of action.</p>
+      <p>Because of the hand-made nature of our product, we are not able to offer returns. We are not responsible for the following:</p>
+      <ul>
+        <li>Damage caused by improper cleaning solutions or methods</li>
+        <li>Damage caused by improper installation or assembly by the customer or the customer's agent</li>
+        <li>Damage caused by exposure to weather or improper environment</li>
+        <li>Changes in the appearance of hand rubbed finishes or un-lacquered finishes — these are meant to age in appearance</li>
+        <li>Any costs of installation, removal, or re-installation</li>
+        <li>Restoration or repair work</li>
+      </ul>
+    </div></div>
+  </div>
+
+  <div class="faq-item" data-a>
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+      <h3>How do I care for my furniture?</h3>
+      <div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+    </div>
+    <div class="faq-a"><div class="faq-a-inner">
+      <p>All pieces produced by Facet Furniture do not require waxing, oiling, or any specific maintenance but should be cared for.</p>
+      <p>When needed, the furniture should be dusted with a <strong>soft microfiber cloth</strong> that has a small amount of water, if needed. The use of a furniture polish or oil will cause an irregular film over the surface and is not recommended. <strong>Never use anything with an abrasive.</strong></p>
+      <p>The use of coasters or placemats is highly recommended when food or drink items are being placed on the surface to help minimize the risk of damage.</p>
+      <p><strong>Living Finishes:</strong> Our Living finishes are a natural hand-applied finish that will change over time more so than any of our other finishes, and you may feel the need to apply a natural oil rejuvenator to it periodically (typically once or twice a year). You can purchase this product directly from us.</p>
+      <p>With as many cleaners and polishers available we cannot guarantee against a problem caused by them and can only recommend what is mentioned above.</p>
+    </div></div>
+  </div>
+
+  <div class="faq-item" data-a>
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+      <h3>What about natural wood variations?</h3>
+      <div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+    </div>
+    <div class="faq-a"><div class="faq-a-inner">
+      <p>Wood, like all natural materials, has inherent disparities in color and grain pattern. Because of variations caused by nature, over which the company has no control, Facet Furniture does its best to match the finish samples and grain examples provided.</p>
+      <p><strong>Facet Furniture does not guarantee an exact match</strong> to the sample provided due to the natural variation of the wood. Samples of grain pattern and color are matched to the best of our ability.</p>
+    </div></div>
+  </div>
+
+</section>
+
+<section class="cta-band">
+  <h2 data-a>Still have questions?</h2>
+  <p data-a="1">We're here to help with anything about your project.</p>
+  <a href="mailto:info@facetfurniture.com" class="bd" data-a="2">Get in touch <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+</section>
+
+<footer>
+  <div class="ft">
+    <div class="fb"><span class="logo">Facet</span><p>Contemporary furniture with an artisan's touch. Designed and handcrafted in Birmingham, Alabama by MDM Design Studio.</p>
+      <div class="social">
+        <a href="https://www.facebook.com/facetfurniture/" target="_blank" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/mdmdesignstudio/" target="_blank" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.pinterest.com/mdmdesignstudio/facet-furniture/" target="_blank" aria-label="Pinterest"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.15 9.42 7.6 11.18-.1-.94-.2-2.38.04-3.41.22-.93 1.4-5.93 1.4-5.93s-.36-.72-.36-1.78c0-1.66.97-2.91 2.17-2.91 1.02 0 1.52.77 1.52 1.69 0 1.03-.66 2.57-1 3.99-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.25 3.78-5.5 0-2.88-2.07-4.89-5.02-4.89-3.42 0-5.43 2.57-5.43 5.22 0 1.03.4 2.14.89 2.74.1.12.11.22.08.34-.09.38-.3 1.2-.34 1.36-.05.22-.18.26-.42.16-1.56-.73-2.53-3.01-2.53-4.84 0-3.94 2.86-7.56 8.26-7.56 4.33 0 7.71 3.09 7.71 7.21 0 4.31-2.72 7.78-6.49 7.78-1.27 0-2.46-.66-2.87-1.44l-.78 2.98c-.28 1.09-1.04 2.45-1.55 3.28C9.58 23.81 10.77 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg></a>
+      </div>
+    </div>
+    <div class="fc"><h5>Collection</h5><a href="index.html#col">Tables</a><a href="index.html#col">Storage</a><a href="index.html#col">Seating</a><a href="index.html#col">Bedroom</a><a href="index.html#col">Mirrors</a></div>
+    <div class="fc"><h5>Resources</h5><a href="index.html#fin">Finishes</a><a href="#">Materials</a><a href="#">Care Guide</a><a href="faq.html">FAQ</a></div>
+    <div class="fc"><h5>Contact</h5><a href="mailto:info@facetfurniture.com">info@facetfurniture.com</a><a href="#">4306 Powell Ave S<br>Birmingham, AL 35222</a></div>
+  </div>
+  <div class="fbot"><span>&copy; 2026 Facet · MDM Design Studio</span><span>Mon–Fri, 8am–5pm CST</span></div>
+</footer>
+
+<script>
+const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:.05,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('[data-a]').forEach(el=>o.observe(el));
+</script>
+</body>
+</html>

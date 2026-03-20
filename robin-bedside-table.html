@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robin Bedside Table — Facet Furniture</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.product-hero{padding:7rem 4vw 4rem;display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;min-height:90vh;align-items:start}
+.gal{position:relative;background:white;display:flex;align-items:center;justify-content:center;padding:2rem;min-height:500px;overflow:hidden}
+.gal-item{display:none;width:100%;text-align:center}
+.gal-item.active{display:flex;align-items:center;justify-content:center;animation:fadeIn .4s ease}
+.gal-item img{max-width:100%;max-height:65vh;object-fit:contain}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.thumbs{display:flex;gap:6px;margin-top:6px;overflow-x:auto;padding:4px 0}
+.thumb{width:72px;height:72px;background:white;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:4px;border:2px solid transparent;transition:border-color .3s;flex-shrink:0}
+.thumb.active{border-color:var(--tx)}
+.thumb img{max-width:100%;max-height:100%;object-fit:contain}
+
+.product-details{padding-top:2rem;position:sticky;top:6rem}
+.product-details .ey{margin-bottom:1rem}
+.product-details h1{font-weight:800;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.05;color:var(--tx);margin-bottom:.8rem;letter-spacing:-.02em}
+.product-details .tagline{font-size:.85rem;font-weight:400;color:var(--tx2);line-height:1.7;margin-bottom:1.5rem}
+.product-details .dims{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tx3);margin-bottom:.5rem}
+.product-details .shown{font-size:.72rem;font-weight:400;font-style:italic;color:var(--tx3);margin-bottom:2rem}
+
+.opt-group{margin-bottom:1.5rem}
+.opt-label{display:block;font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--tx3);margin-bottom:.6rem}
+.opt-pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font-family:var(--font);font-size:.65rem;font-weight:500;padding:.5rem .9rem;border:1.5px solid var(--bdr);background:transparent;color:var(--tx2);cursor:pointer;transition:all .2s;letter-spacing:.02em}
+.pill:hover{border-color:var(--tx);color:var(--tx)}
+.pill.sel{background:var(--tx);color:var(--bg);border-color:var(--tx)}
+
+.quote-btn-area{margin-top:2rem;padding-top:2rem;border-top:1px solid var(--bdr)}
+
+.desc-section{padding:6rem 4vw;max-width:700px}
+.desc-section h2{font-weight:800;font-size:1.4rem;color:var(--tx);margin-bottom:1rem;letter-spacing:-.01em}
+.desc-section p{font-size:.88rem;font-weight:400;line-height:1.9;color:var(--tx2)}
+
+.more-section{padding:6rem 4vw 8rem}
+.more-section h2{font-weight:800;font-size:clamp(1.4rem,2.5vw,2rem);color:var(--tx);margin-bottom:2.5rem;letter-spacing:-.02em}
+.more-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.more-card{display:block;background:white;transition:transform .3s}
+.more-card:hover{transform:translateY(-4px)}
+.more-img{display:flex;align-items:center;justify-content:center;padding:1.5rem;aspect-ratio:4/3;background:white}
+.more-img img{max-width:100%;max-height:100%;object-fit:contain}
+.more-info{padding:1.2rem 1.4rem;background:var(--bg)}
+.more-info h4{font-weight:700;font-size:.82rem;color:var(--tx);margin-bottom:.2rem}
+.more-info span{font-size:.65rem;color:var(--tx3)}
+
+@media(max-width:1024px){
+  .product-hero{grid-template-columns:1fr;gap:2rem;min-height:auto}
+  .product-details{position:static}
+  .more-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .product-hero{padding:6rem 5vw 3rem}
+  .more-grid{grid-template-columns:1fr}
+  .desc-section{padding:4rem 5vw}
+  .more-section{padding:4rem 5vw 6rem}
+}
+</style>
+</head>
+<body>
+
+<div class="mm" id="mm"><button class="mx" onclick="document.getElementById('mm').classList.remove('open')">&times;</button><a href="../index.html#col" onclick="document.getElementById('mm').classList.remove('open')">Collection</a><a href="../index.html#fin" onclick="document.getElementById('mm').classList.remove('open')">Finishes</a><a href="../index.html#about" onclick="document.getElementById('mm').classList.remove('open')">Atelier</a><a href="#quote" onclick="document.getElementById('mm').classList.remove('open')">Quote</a></div>
+
+<nav>
+  <a href="../index.html" class="logo">Facet</a>
+  <div class="nav-r">
+    <a href="../index.html#col" class="nl">Collection</a>
+    <a href="../index.html#fin" class="nl">Finishes</a>
+    <a href="../index.html#about" class="nl">Atelier</a>
+    <button class="nb" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">Request Quote</button>
+    <div class="ham" onclick="document.getElementById('mm').classList.add('open')"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="product-hero">
+  <div>
+    <div class="gal" data-a>
+      
+      <div class="gal-item active" data-i="0">
+        <img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/13_robin_bedside_table/frontside.jpg" alt="Robin Bedside Table" loading="eager">
+      </div>
+      <div class="gal-item" data-i="1">
+        <img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/13_robin_bedside_table/front_view.jpg" alt="Robin Bedside Table" loading="lazy">
+      </div>
+      <div class="gal-item" data-i="2">
+        <img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/13_robin_bedside_table/drawer.jpg" alt="Robin Bedside Table" loading="lazy">
+      </div>
+      <div class="gal-item" data-i="3">
+        <img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/13_robin_bedside_table/handle_details.jpg" alt="Robin Bedside Table" loading="lazy">
+      </div>
+      <div class="gal-item" data-i="4">
+        <img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/13_robin_bedside_table/side_details.jpg" alt="Robin Bedside Table" loading="lazy">
+      </div>
+      <div class="gal-item" data-i="5">
+        <img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/13_robin_bedside_table/leg_details.jpg" alt="Robin Bedside Table" loading="lazy">
+      </div>
+      <div class="gal-item" data-i="6">
+        <img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/13_robin_bedside_table/side_view.jpg" alt="Robin Bedside Table" loading="lazy">
+      </div>
+    </div>
+    <div class="thumbs" data-a="1">
+      
+        <div class="thumb active" onclick="setImg(0)">
+          <img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/13_robin_bedside_table/frontside.jpg" alt="View 1">
+        </div>
+        <div class="thumb" onclick="setImg(1)">
+          <img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/13_robin_bedside_table/front_view.jpg" alt="View 2">
+        </div>
+        <div class="thumb" onclick="setImg(2)">
+          <img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/13_robin_bedside_table/drawer.jpg" alt="View 3">
+        </div>
+        <div class="thumb" onclick="setImg(3)">
+          <img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/13_robin_bedside_table/handle_details.jpg" alt="View 4">
+        </div>
+        <div class="thumb" onclick="setImg(4)">
+          <img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/13_robin_bedside_table/side_details.jpg" alt="View 5">
+        </div>
+        <div class="thumb" onclick="setImg(5)">
+          <img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/13_robin_bedside_table/leg_details.jpg" alt="View 6">
+        </div>
+        <div class="thumb" onclick="setImg(6)">
+          <img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/13_robin_bedside_table/side_view.jpg" alt="View 7">
+        </div>
+    </div>
+  </div>
+  <div class="product-details">
+    <div class="ey" data-a>SKU 117</div>
+    <h1 data-a="1">Robin Bedside Table</h1>
+    <p class="tagline" data-a="2">Compact dovetail nightstand with brass accents — all-wood or painted top option.</p>
+    <div class="dims" data-a="3">Dimensions: 30" × 22" × 28"</div>
+    <div class="shown" data-a="3">Shown: Walnut with Silver Lining Living finish and Matte Gun Gray paint</div>
+    <div data-a="4">
+      
+          <div class="opt-group" data-a>
+            <label class="opt-label">Wood</label>
+            <div class="opt-pills">
+              <button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Walnut</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">White Oak</button>
+            </div>
+          </div>
+          <div class="opt-group" data-a>
+            <label class="opt-label">Material</label>
+            <div class="opt-pills">
+              <button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">All Wood</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Wood Base / Painted Top</button>
+            </div>
+          </div>
+          <div class="opt-group" data-a>
+            <label class="opt-label">Paint</label>
+            <div class="opt-pills">
+              <button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">All Wood</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Matte Char Brown</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Matte Ghost White</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Matte Gun Gray</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Matte Jet Black</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Matte Storm Gray</button>
+            </div>
+          </div>
+          <div class="opt-group" data-a>
+            <label class="opt-label">Finish</label>
+            <div class="opt-pills">
+              <button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Ghost White / Gray Cerused</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Ghost White Living</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Gray Ash</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Jet / Ghost Cerused</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Jet / Gray Cerused</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Natural / Ghost Cerused</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Natural / Gray Cerused</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Natural Walnut</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Natural White Oak</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Overcast / White Cerused</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Pure Living</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Shade Pure Living</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Shadow</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Silver Lining Living</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Smoke / Pure Living</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">Smoke White Living</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">White 5%</button><button class="pill" onclick="this.parentElement.querySelectorAll('.pill').forEach(p=>p.classList.remove('sel'));this.classList.add('sel')">White Out / Shadow Cerused</button>
+            </div>
+          </div>
+    </div>
+    <div class="quote-btn-area" data-a="4" id="quote">
+      <a href="/cdn-cgi/l/email-protection#a9c0c7cfc6e9cfc8caccddcfdcdbc7c0dddcdbcc87cac6c496dadccbc3cccadd94f8dcc6ddcc89fbccd8dcccdadd9389fbc6cbc0c78c9b99ebcccddac0cdcc8c9b99fdc8cbc5cc" class="bd">Request a quote <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="desc-section" data-a>
+  <h2>About this piece</h2>
+  <p>Simple storage without the bulk. A dovetail drawer sits on top of our signature dovetail base with adjustable brass feet and brass pull. Available in all-wood or with a matte urethane painted top. Streamlined design maximizes storage without consuming too much space.</p>
+</section>
+
+<section class="more-section">
+  <h2 data-a>More from the collection</h2>
+  <div class="more-grid">
+    
+      <a href="eisberg-entry-table.html" class="more-card" data-a>
+        <div class="more-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/01_eisberg_entry_table/back_view.jpg" alt="Eisberg Entry Table" loading="lazy"></div>
+        <div class="more-info"><h4>Eisberg Entry Table</h4><span>An illusionary table inspired by icebergs</span></div>
+      </a>
+      <a href="prodigieux-credenza.html" class="more-card" data-a>
+        <div class="more-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/02_prodigieux_credenza/front_top.jpg" alt="Prodigieux Credenza" loading="lazy"></div>
+        <div class="more-info"><h4>Prodigieux Credenza</h4><span>A massive marble-topped credenza on modern bronze feet with three configurable compartments.</span></div>
+      </a>
+      <a href="phylo-hutch.html" class="more-card" data-a>
+        <div class="more-img"><img src="https://raw.githubusercontent.com/thecreatorie/facet-furniture/c7ab561ebd26d84bebeb7795c529fd43baf75c70/facet_furniture_images/03_phylo_hutch/front_view.jpg" alt="Phylo Hutch" loading="lazy"></div>
+        <div class="more-info"><h4>Phylo Hutch</h4><span>Luxurious shagreen doors conceal three adjustable shelves and a mirror inside this grand hutch.</span></div>
+      </a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft">
+    <div class="fb"><span class="logo">Facet</span><p>Contemporary furniture with an artisan's touch. Designed and handcrafted in Birmingham, Alabama by MDM Design Studio.</p>
+      <div class="social">
+        <a href="https://www.facebook.com/facetfurniture/" target="_blank" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.instagram.com/mdmdesignstudio/" target="_blank" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.pinterest.com/mdmdesignstudio/facet-furniture/" target="_blank" aria-label="Pinterest"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.15 9.42 7.6 11.18-.1-.94-.2-2.38.04-3.41.22-.93 1.4-5.93 1.4-5.93s-.36-.72-.36-1.78c0-1.66.97-2.91 2.17-2.91 1.02 0 1.52.77 1.52 1.69 0 1.03-.66 2.57-1 3.99-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.25 3.78-5.5 0-2.88-2.07-4.89-5.02-4.89-3.42 0-5.43 2.57-5.43 5.22 0 1.03.4 2.14.89 2.74.1.12.11.22.08.34-.09.38-.3 1.2-.34 1.36-.05.22-.18.26-.42.16-1.56-.73-2.53-3.01-2.53-4.84 0-3.94 2.86-7.56 8.26-7.56 4.33 0 7.71 3.09 7.71 7.21 0 4.31-2.72 7.78-6.49 7.78-1.27 0-2.46-.66-2.87-1.44l-.78 2.98c-.28 1.09-1.04 2.45-1.55 3.28C9.58 23.81 10.77 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg></a>
+      </div>
+    </div>
+    <div class="fc"><h5>Collection</h5><a href="../index.html#col">Tables</a><a href="../index.html#col">Storage</a><a href="../index.html#col">Seating</a><a href="../index.html#col">Bedroom</a><a href="../index.html#col">Mirrors</a></div>
+    <div class="fc"><h5>Resources</h5><a href="../index.html#fin">Finishes</a><a href="#">Materials</a><a href="../faq.html">Care Guide</a><a href="../faq.html">FAQ</a></div>
+    <div class="fc"><h5>Contact</h5><a href="/cdn-cgi/l/email-protection#ddb4b3bbb29dbbbcbeb8a9bba8afb3b4a9a8afb8f3beb2b0"><span class="__cf_email__" data-cfemail="6d04030b022d0b0c0e08190b181f030419181f08430e0200">[email&#160;protected]</span></a><a href="#">4306 Powell Ave S<br>Birmingham, AL 35222</a></div>
+  </div>
+  <div class="fbot"><span>&copy; 2026 Facet · MDM Design Studio</span><span>Mon–Fri, 8am–5pm CST</span></div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function setImg(i){
+  document.querySelectorAll('.gal-item').forEach((el,idx)=>{el.classList.toggle('active',idx===i)}

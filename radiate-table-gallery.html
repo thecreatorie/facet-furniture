@@ -7,14 +7,13 @@
 .fh{font-weight:700;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.15);margin-bottom:.8rem}
 .fl{display:block;font-size:.75rem;margin-bottom:.5rem}
 .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.8rem;background:var(--tx);color:var(--bg);font-family:var(--font);font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:none;cursor:pointer;transition:all .2s}.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.1)}
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.2rem;padding:3rem 4vw;max-width:1400px;margin:0 auto}
-.gallery-item{position:relative;overflow:hidden;border-radius:4px;background:white;transition:all .3s ease;cursor:pointer}
+.gallery{column-count:4;column-gap:1rem;padding:3rem 4vw;max-width:1400px;margin:0 auto}
+.gallery-item{break-inside:avoid;margin-bottom:1rem;background:white;border-radius:4px;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease}
 .gallery-item:hover{transform:translateY(-4px);box-shadow:0 15px 40px rgba(0,0,0,.12)}
-.gallery-item img{width:100%;height:auto;display:block;object-fit:cover}
-.gallery-item-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);opacity:0;transition:opacity .3s ease;display:flex;align-items:center;justify-content:center;color:white;font-size:.85rem;font-weight:600;text-align:center;padding:1rem}
-.gallery-item:hover .gallery-item-overlay{opacity:1}
-@media(max-width:900px){.nv a:not(.qb){display:none}.gallery{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.8rem;padding:2rem 4vw}}
-@media(max-width:600px){.gallery{grid-template-columns:repeat(2,1fr);gap:.6rem;padding:1.5rem 4vw}}
+.gallery-item img{width:100%;height:auto;display:block}
+@media(max-width:1100px){.gallery{column-count:3}}
+@media(max-width:900px){.nv a:not(.qb){display:none}.gallery{column-count:2;column-gap:.8rem;padding:2rem 4vw}.gallery-item{margin-bottom:.8rem}}
+@media(max-width:600px){.gallery{column-count:2;column-gap:.6rem;padding:1.5rem 4vw}.gallery-item{margin-bottom:.6rem}}
 </style></head><body>
 <nav style="position:fixed;top:0;left:0;right:0;z-index:900;padding:1.2rem 4vw;display:flex;justify-content:space-between;align-items:center;background:rgba(245,244,240,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr)"><a href="index.html" style="font-weight:800;font-size:.95rem;letter-spacing:.32em;text-transform:uppercase;color:var(--tx)">Facet</a><div style="display:flex;align-items:center;gap:2rem" class="nv"><a href="index.html#col" class="nk">Collection</a><a href="finishes.html" class="nk">Finishes</a><a href="faq.html" class="nk">FAQ</a><a href="contact.html" class="qb">Request Quote</a></div></nav>
 
@@ -72,10 +71,7 @@ function initGallery(){
   galleryImages.forEach((img, idx) => {
     const item = document.createElement('div');
     item.className = 'gallery-item r ' + (idx % 3 === 0 ? 'r1' : idx % 3 === 1 ? 'r2' : 'r3');
-    item.innerHTML = `
-      <img src="./facet_furniture_images/14_radiate_table/Customer Gallery/${img}" alt="Radiate Table - Customer Gallery ${idx + 1}" loading="lazy">
-      <div class="gallery-item-overlay">Customer Gallery ${idx + 1}</div>
-    `;
+    item.innerHTML = `<img src="./facet_furniture_images/14_radiate_table/Customer Gallery/${img}" alt="Radiate Table" loading="lazy">`;
     gallery.appendChild(item);
   });
 }
